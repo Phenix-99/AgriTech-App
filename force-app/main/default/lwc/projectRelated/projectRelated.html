@@ -1,5 +1,12 @@
 <template>
      <lightning-layout>
-         <lightning-button label={} onclick={viewDetailProject} variant="base"></lightning-button>
+         <template if:true={projList}>
+             <template for:each={projList} for:item="proj">
+                 <lightning-layout-item key={proj.Id}>
+                    <lightning-button label={proj.Name} onclick={viewDetailProject} variant="base"></lightning-button>
+                 </lightning-layout-item>
+             </template>
+         </template>
+         
      </lightning-layout>
 </template>
