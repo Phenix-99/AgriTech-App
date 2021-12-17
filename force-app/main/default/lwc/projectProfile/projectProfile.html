@@ -1,0 +1,122 @@
+<template>
+    
+    <lightning-card>
+        <lightning-layout multiple-rows="true" horizontal-align="space">
+            <!-- Header -->
+           
+            <!--Products-->
+          
+
+<!---->
+
+            <!-- <div style="width: 320px;margin-left:20px;" id="profile">
+               
+                            
+                <lightning-vertical-navigation selected-item="Profil du projet">
+                    <lightning-vertical-navigation-section label="Profil du projet">
+                        <lightning-vertical-navigation-item label="Nom du cultivateur" name="Nom du cultivateur"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Plante" name="Plante"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Superficie du champ" name="Superficie du champ"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Date de prise de contact" name="Date de prise de contact"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Date de sémis" name="Date de sémis"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Date prévu de fin de projet" name="Date prévu de fin de projet"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Pays" name="Pays"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Région" name="Région"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Localisation" name="Localisation"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Biographie" name="Biographie"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Source" name="Source"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Expérience avec Agrix Tech" name="Expérience avec Agrix Tech"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Téléphone" name="Téléphone"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="WhatsApp" name="WhatsApp"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Possède Agrix Tech" name="Possède Agrix Tech"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Autres projets actifs" name="Autres projets actifs"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="All Reports" name="all"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Gombo" name="Gombo"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Tomate" name="Tomate"></lightning-vertical-navigation-item>
+                    </lightning-vertical-navigation-section>
+                </lightning-vertical-navigation>
+            </div> -->
+
+<div style="width:fitcontent;">
+            <lightning-record-view-form
+            record-id="003XXXXXXXXXXXXXXX"
+            object-api-name="Project"
+        >
+            <div class="slds-box slds-theme_default">
+                <lightning-output-field field-name="Nom du cultivateur"> </lightning-output-field>
+                <lightning-output-field field-name="Plante">
+                </lightning-output-field>
+                <lightning-output-field field-name="Superficie du champ">
+                </lightning-output-field>
+                <lightning-output-field field-name="Date de prise de contact">
+                </lightning-output-field>
+                <lightning-output-field field-name="Date de sémis">
+                </lightning-output-field>
+                <lightning-output-field field-name="Date prévu de fin de projet">
+                </lightning-output-field>
+                <lightning-output-field field-name="Pays">
+                </lightning-output-field>
+                <lightning-output-field field-name="Région">
+                </lightning-output-field>
+                <lightning-output-field field-name="Localisation">
+                </lightning-output-field>
+                <lightning-output-field field-name="Biographie">
+                </lightning-output-field>
+                <lightning-output-field field-name="Source">
+                </lightning-output-field>
+                <lightning-output-field field-name="Expérience avec Agrix Tech">
+                </lightning-output-field>
+                <lightning-output-field field-name="Téléphone">
+                </lightning-output-field>
+                <lightning-output-field field-name="WhatsApp">
+                </lightning-output-field>
+                <lightning-output-field field-name="Possède Agrix Tech">
+                </lightning-output-field>
+                <lightning-output-field field-name="Autres projets actifs">
+                </lightning-output-field>
+                <lightning-output-field field-name="All Reports">
+                </lightning-output-field>
+                <lightning-output-field field-name="Gombo">
+                </lightning-output-field>
+                <lightning-output-field field-name="Tomate">
+                </lightning-output-field>
+            </div>
+        </lightning-record-view-form>
+    </div>
+           
+            
+
+ 
+            <lightning-layout-item size="10">
+                <lightning-input class="slds-m-left_x-small" type="checkbox" label="J’accepte les Conditions Générales de Vente. En savoir plus" name="checkbox"></lightning-input>
+            </lightning-layout-item>
+<!---->
+
+
+
+
+
+
+<!--lightning button-->
+   <!-- <lightning-card title="Download PDF">
+            <lightning-layout>
+                <div class="slds-p-around_small" >
+                    <lightning-button variant="brand" label="Generate PDF" onclick={generatePdf}></lightning-button>
+                    <br/><br/>
+    
+                    <template if:true={boolShowSpinner}>
+                        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                    </template>
+    
+                </div>
+            </lightning-layout>
+        </lightning-card> -->
+
+
+
+        <!--the end-->
+
+        </lightning-layout>
+    </lightning-card>
+
+</template>
