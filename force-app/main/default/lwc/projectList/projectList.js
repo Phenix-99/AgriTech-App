@@ -1,21 +1,46 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, wire, api, track } from 'lwc';
+import getFarmerProjectsByHisName from '@salesforce/apex/ProjectController.getFarmerProjectsByHisName';
 
 const columns = [ 
-    { label: 'Nom cultivateur', fieldName: '' },
-    { label: 'Plante cultivée', fieldName: '' },
-    { label: 'Whatsapp/Téléphone', fieldName: '' },
-    { label: 'Etape', fieldName: '' },
-    { label: 'Sévérité', fieldName: '' },
-    { label: 'Pays', fieldName: '' },
-    { label: 'Region', fieldName: '' },
-    { label: 'Status', fieldName: '' }
+    { label: 'Nom cultivateur', fieldName: 'farmer' },
+    { label: 'Plante cultivée', fieldName: 'plant' },
+    { label: 'Whatsapp/Téléphone', fieldName: 'tel' },
+    { label: 'Etape', fieldName: 'step' },
+    { label: 'Sévérité', fieldName: 'severity' },
+    { label: 'Pays', fieldName: 'country' },
+    { label: 'Region', fieldName: 'region' },
+    { label: 'Status', fieldName: 'status' }
 ];
 
 export default class ProjectList extends LightningElement {
     @api
-    farmerName;
+    farmer;
 
-    farmerSelected(event) {
+    columns = columns;
 
+    @track
+    projectList;
+    
+    error = undefined;
+
+    @wire(getFarmerProjectsByHisName, { farmerName: '$farmer' })
+    getFarmer({data, error}) {
+        if (data) {
+            console.log(data)
+            this.projectList = data.map(project => {
+                const p = {
+                    farmer: project.Farmer__r.Name,
+                    plant: project.Plant__r.Name,
+                    tel: project.Farmer__r.Phone__c,
+                    country: project.Pays__c,
+                    region: project.Region__c,
+                    status: project.Status__c
+                }
+                return p;
+            })
+        } else if (error) {
+            console.log(error);
+            this.error = error;
+        }
     }
 }

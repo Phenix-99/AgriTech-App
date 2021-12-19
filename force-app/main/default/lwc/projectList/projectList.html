@@ -1,5 +1,11 @@
 <template>
     <lightning-card title="Project list">
-        
+        <lightning-datatable
+        data={projectList}
+        key-field="Id"
+        columns={columns}
+        show-row-number-column
+        hide-checkbox-column
+        ></lightning-datatable>
     </lightning-card>
 </template>

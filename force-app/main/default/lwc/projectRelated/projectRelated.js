@@ -20,4 +20,4 @@ export default class ProjectRelated extends LightningElement {
     viewDetailProject(){
 
     }
-} 
+}
