@@ -11,9 +11,39 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Etape1,Etape2,Etape3,Etape4,Etape5,Etape6,Etape7</fullName>
+                <fullName>Etape1</fullName>
                 <default>false</default>
-                <label>Etape1,Etape2,Etape3,Etape4,Etape5,Etape6,Etape7</label>
+                <label>Etape1</label>
+            </value>
+            <value>
+                <fullName>Etape2</fullName>
+                <default>false</default>
+                <label>Etape2</label>
+            </value>
+            <value>
+                <fullName>Etape3</fullName>
+                <default>false</default>
+                <label>Etape3</label>
+            </value>
+            <value>
+                <fullName>Etape4</fullName>
+                <default>false</default>
+                <label>Etape4</label>
+            </value>
+            <value>
+                <fullName>Etape5</fullName>
+                <default>false</default>
+                <label>Etape5</label>
+            </value>
+            <value>
+                <fullName>Etape6</fullName>
+                <default>false</default>
+                <label>Etape6</label>
+            </value>
+            <value>
+                <fullName>Etape7</fullName>
+                <default>false</default>
+                <label>Etape7</label>
             </value>
         </valueSetDefinition>
     </valueSet>

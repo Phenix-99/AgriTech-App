@@ -13,7 +13,12 @@
             <value>
                 <fullName>Female,Male</fullName>
                 <default>false</default>
-                <label>Female,Male</label>
+                <label>Female</label>
+            </value>
+            <value>
+                <fullName>Male</fullName>
+                <default>false</default>
+                <label>Male</label>
             </value>
         </valueSetDefinition>
     </valueSet>

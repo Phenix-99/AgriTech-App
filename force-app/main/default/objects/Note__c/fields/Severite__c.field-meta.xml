@@ -11,9 +11,19 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Eleve,Moyen,Faible</fullName>
+                <fullName>Eleve</fullName>
                 <default>false</default>
-                <label>Eleve,Moyen,Faible</label>
+                <label>Eleve</label>
+            </value>
+            <value>
+                <fullName>Moyen</fullName>
+                <default>false</default>
+                <label>Moyen</label>
+            </value>
+            <value>
+                <fullName>Faible</fullName>
+                <default>false</default>
+                <label>Faible</label>
             </value>
         </valueSetDefinition>
     </valueSet>
