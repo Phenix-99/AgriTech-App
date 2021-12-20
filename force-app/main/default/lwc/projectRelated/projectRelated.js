@@ -11,8 +11,8 @@ export default class ProjectRelated extends LightningElement {
 
     connectedCallback(){
         retrieveProjects({cultivateurId:this.farmerId}).then(
-            result=>{ this.projList=result;
-
+            result=>{
+                this.projList=result;
             }
         );
     }

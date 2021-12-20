@@ -11,6 +11,5 @@ public with sharing class projectRelatedController {
         } catch (Exception ex) {
             throw new AuraHandledException(ex.getMessage());
         }
-       
     }
 }
