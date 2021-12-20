@@ -25,7 +25,7 @@ public class ProjectController {
     // get related project
     @AuraEnabled(cacheable=true)
     public static List<Project__c> retrieveProjects(Id cultivateurId, Id projIdLoad) {
-        try {
+        
             Farmer__c culti=[SELECT Id, Name, (SELECT Id, Name FROM Projects__r) FROM Farmer__c WHERE Id=:cultivateurId LIMIT 1];
             List<Project__c> projListAll= culti.Projects__r;
             List<Project__c> projList= new List<Project__c>();
@@ -35,9 +35,7 @@ public class ProjectController {
                 }
             }
             return projList;
-        } catch (Exception ex) {
-            throw new AuraHandledException(ex.getMessage());
-        }
+        
        
     }
  
