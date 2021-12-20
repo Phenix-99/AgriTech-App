@@ -11,6 +11,7 @@ public class ProjectController {
         return projects;
     }
 
+
     //Get Information about the project Profile
     @AuraEnabled(cacheable=true)
     public static List<Project__c> getProjectProfil(Id projectId){
@@ -19,6 +20,25 @@ public class ProjectController {
                                     Farmer__r.Name,Farmer__r.Biography__c,Farmer__r.Source__c,Farmer__r.Phone__c,Farmer__r.Whatsapp__c,Farmer__r.Email__c,Farmer__r.Hold_Agrix__c,
                                     plant__r.Name,(SELECT Severite__c FROM Notes__r) FROM Project__c WHERE Id =: projectId];
         return projects;
+    }
+
+    // get related project
+    @AuraEnabled(cacheable=true)
+    public static List<Project__c> retrieveProjects(Id cultivateurId, Id projIdLoad) {
+        try {
+            Farmer__c culti=[SELECT Id, Name, (SELECT Id, Name FROM Projects__r) FROM Farmer__c WHERE Id=:cultivateurId LIMIT 1];
+            List<Project__c> projListAll= culti.Projects__r;
+            List<Project__c> projList= new List<Project__c>();
+            for (Project__c proj : projListAll) {
+                if (proj.Id!=projIdLoad) {
+                    projList.add(proj);
+                }
+            }
+            return projList;
+        } catch (Exception ex) {
+            throw new AuraHandledException(ex.getMessage());
+        }
+       
     }
  
 }
