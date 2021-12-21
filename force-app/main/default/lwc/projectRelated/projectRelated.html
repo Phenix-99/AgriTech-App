@@ -1,12 +1,11 @@
 <template>
-     <lightning-layout>
          <template if:true={projList}>
              <template for:each={projList} for:item="proj">
-                 <lightning-layout-item key={proj.Id}>
-                    <lightning-button label={proj.Name} onclick={sendProjectId} data-recordid={proj.Id} variant="base"></lightning-button>
-                 </lightning-layout-item>
+                 <section key={proj.Id}>
+                     <ul>
+                         <li><lightning-button label={proj.Name} onclick={sendProjectId} data-recordid={proj.Id} variant="base"></lightning-button></li>
+                     </ul>
+                    </section>
              </template>
          </template>
-         
-     </lightning-layout>
 </template>
