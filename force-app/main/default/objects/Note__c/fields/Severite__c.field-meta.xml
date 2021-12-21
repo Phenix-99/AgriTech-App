@@ -15,6 +15,24 @@
                 <default>false</default>
                 <label>Eleve,Moyen,Faible</label>
             </value>
+            <value>
+                <fullName>Eleve</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eleve</label>
+            </value>
+            <value>
+                <fullName>Faible</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Faible</label>
+            </value>
+            <value>
+                <fullName>Moyen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Moyen</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
