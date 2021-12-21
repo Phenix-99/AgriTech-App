@@ -11,14 +11,15 @@ export default class ProjectRelated extends LightningElement {
     @wire(CurrentPageReference) pageRef;
 
     connectedCallback(){
-        if(farmerId && projIdExist){
+        if(this.farmerId && this.projIdExist){
             retrieveProjects({cultivateurId:this.farmerId, projIdLoad:this.projIdExist}).then(
-                result=>{ this.projList=result;
-    
+                result=>{ 
+                    this.projList=result;
                 }
             );
         }
     }
+
 
     sendProjectId(event){
         this.projId=event.target.dataset.recordid;
@@ -26,4 +27,4 @@ export default class ProjectRelated extends LightningElement {
     }
 
     
-} 
+}

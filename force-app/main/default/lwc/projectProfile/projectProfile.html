@@ -1,7 +1,7 @@
 <template>
 
     <template if:true={profil}>
-        <lightning-card title={profil.Name}>
+        <lightning-card title={profil.Name} key={profil.Id}>
             <ul class="slds-list_dotted">
                 <li>Nom du cultivateur: {profil.Farmer__r.Name}</li>
                 <li>Plante: {profil.Plant__r.Name}</li>
@@ -20,6 +20,7 @@
                 <li>Telephone: {profil.Farmer__r.Phone__c}</li>
                 <li>Whatsapp: {profil.Farmer__r.Whatsapp__c}</li>
                 <li>Possède Agrix-Tech: {profil.Farmer__r.Hold_Agrix__c}</li>
+                <li>Autres Projets du meme Agriculteur: <c-project-related farmer-id={profil.Farmer__r.Id} proj-id-exist={profil.Id}></c-project-related></li>
             </ul>
         </lightning-card>
     </template>

@@ -13,7 +13,7 @@ export default class ProjectProfile extends LightningElement {
         if(data){
             console.log(data);
             this.profil = data[0];
-            this.profil_severité = this.profil.Notes__r[0].Severite__c;
+            this.profil_severité = this.profil.Notes__r ? this.profil.Notes__r[0].Severite__c : '';
         }else if(error){
             console.log(error);
         }
