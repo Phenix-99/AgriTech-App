@@ -10,8 +10,6 @@ public class ProjectController {
         
         return projects;
     }
-<<<<<<< HEAD
-
 
     //Get Information about the project Profile
     @AuraEnabled(cacheable=true)
@@ -37,9 +35,6 @@ public class ProjectController {
             }
             return projList;
         
-       
     }
  
-=======
->>>>>>> origin/lorelbranch
 }
