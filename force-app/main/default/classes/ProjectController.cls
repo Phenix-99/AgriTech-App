@@ -10,6 +10,7 @@ public class ProjectController {
         
         return projects;
     }
+<<<<<<< HEAD
 
 
     //Get Information about the project Profile
@@ -39,4 +40,6 @@ public class ProjectController {
        
     }
  
+=======
+>>>>>>> origin/lorelbranch
 }

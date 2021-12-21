@@ -26,6 +26,18 @@
                 <isActive>false</isActive>
                 <label>A jour,Pas à jour</label>
             </value>
+            <value>
+                <fullName>A jour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>A jour</label>
+            </value>
+            <value>
+                <fullName>Pas à jour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pas à jour</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -26,6 +26,18 @@
                 <isActive>false</isActive>
                 <label>Male,Female</label>
             </value>
+            <value>
+                <fullName>Female</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Female</label>
+            </value>
+            <value>
+                <fullName>Male</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Male</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
