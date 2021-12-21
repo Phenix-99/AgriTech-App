@@ -6,6 +6,9 @@ export default class ProjectList extends NavigationMixin(LightningElement) {
     @api
     farmer;
 
+    @api
+    filterValues;
+
     @track
     selectedProjectId;
 
