@@ -27,7 +27,7 @@ export default class ProjectList extends LightningElement {
     getFarmer({data, error}) {
         if (data) {
             console.log(data)
-            this.projectList = data.map(project => {
+            this.projectList = data.map(function (project) {
                 const p = {
                     farmer: project.Farmer__r.Name,
                     plant: project.Plant__r.Name,
