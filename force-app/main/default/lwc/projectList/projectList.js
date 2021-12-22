@@ -18,6 +18,22 @@ export default class ProjectList extends NavigationMixin(LightningElement) {
     
     error = undefined;
 
+    get country() {
+        return (this.filterValues && this.filterValues.pays) ? this.filterValues.pays : '';
+    }
+
+    get region() {
+        return (this.filterValues && this.filterValues.region) ? this.filterValues.region : '';
+    }
+
+    get plant() {
+        return (this.filterValues && this.filterValues.plant) ? this.filterValues.plant : '';
+    }
+
+    get status() {
+        return (this.filterValues && this.filterValues.status) ? this.filterValues.status : '';
+    }
+
     @wire(getFarmerProjectsByHisName, { farmerName: '$farmer' })
     getFarmer({data, error}) {
         if (this.farmer) {
