@@ -11,7 +11,6 @@ public class ProjectController {
         return projects;
     }
 
-
     //Get Information about the project Profile
     @AuraEnabled(cacheable=true)
     public static List<Project__c> getProjectProfil(Id projectId){
@@ -36,7 +35,6 @@ public class ProjectController {
             }
             return projList;
         
-       
     }
  
 }
