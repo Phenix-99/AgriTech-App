@@ -3,48 +3,9 @@
     <fullName>Etape__c</fullName>
     <externalId>false</externalId>
     <label>Etape</label>
-    <required>false</required>
+    <length>25</length>
+    <required>true</required>
     <trackTrending>false</trackTrending>
-    <type>Picklist</type>
-    <valueSet>
-        <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Etape1</fullName>
-                <default>false</default>
-                <label>Etape1</label>
-            </value>
-            <value>
-                <fullName>Etape2</fullName>
-                <default>false</default>
-                <label>Etape2</label>
-            </value>
-            <value>
-                <fullName>Etape3</fullName>
-                <default>false</default>
-                <label>Etape3</label>
-            </value>
-            <value>
-                <fullName>Etape4</fullName>
-                <default>false</default>
-                <label>Etape4</label>
-            </value>
-            <value>
-                <fullName>Etape5</fullName>
-                <default>false</default>
-                <label>Etape5</label>
-            </value>
-            <value>
-                <fullName>Etape6</fullName>
-                <default>false</default>
-                <label>Etape6</label>
-            </value>
-            <value>
-                <fullName>Etape7</fullName>
-                <default>false</default>
-                <label>Etape7</label>
-            </value>
-        </valueSetDefinition>
-    </valueSet>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

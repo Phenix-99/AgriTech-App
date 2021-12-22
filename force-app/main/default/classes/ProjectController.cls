@@ -6,7 +6,7 @@ public class ProjectController {
         List<Project__c> projects = [SELECT Id, Farmer__r.Name, Farmer__r.Phone__c,
                                   (SELECT Etape__c, Severite__c FROM Notes__r), Plant__r.Name,
                                   Pays__c, Region__c, Status__c FROM Project__c
-                                  WHERE Farmer__r.Name LIKE : '%'+ farmerName +'%'];
+                                  WHERE Farmer__r.Name LIKE :farmerName +'%'];
         
         return projects;
     }
@@ -17,38 +17,6 @@ public class ProjectController {
         List<Project__c> projects = [SELECT Id, Farmer__r.Name, Farmer__r.Phone__c,
                                   (SELECT Etape__c, Severite__c FROM Notes__r), Plant__r.Name,
                                   Pays__c, Region__c, Status__c FROM Project__c];
-        
-        return projects;
-    }
-    
-    @AuraEnabled(cacheable=true)
-    public static List<Project__c> getFilteredProject(String country, String region, String plant, String status) {
-        
-        String query = 'SELECT Id, Farmer__r.Name, Farmer__r.Phone__c,' +
-            '(SELECT Etape__c, Severite__c FROM Notes__r), Plant__r.Name,' +
-            'Pays__c, Region__c, Status__c FROM Project__c WHERE' + true;
-        
-        if (country != '') {
-            query += 'AND country LIKE :%' + country + '%';
-        } else {
-            
-        }
-        
-        if (region != '') {
-            query += 'AND region LIKE :%' + region + '%';
-        }
-        
-        if (plant != '') {
-            query += 'AND plant LIKE :%' + plant + '%';
-        }
-        
-        if (status != '') {
-            query += 'AND status LIKE :%' + status + '%';
-        }
-        
-        List<Project__c> projects = Database.query(query);
-        
-        System.debug(projects);
         
         return projects;
     }

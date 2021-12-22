@@ -1,7 +1,7 @@
 <template>
-    <lightning-input onchange={handleCountryChange} name="pays" type="text" placeholder="Pays"></lightning-input>
-    <lightning-input onchange={handleRegionChange} name="region" type="text" placeholder="Région"></lightning-input>
-    <lightning-input onchange={handlePlantChange} name="plant" type="text" placeholder="Plante"></lightning-input>
-    <lightning-input onchange={handleStatusChange} name="status" type="checkbox" label="Suivi à jour" class="slds-m-top_x-small"></lightning-input>
+    <lightning-input value={pays} name="pays" type="text" placeholder="Pays"></lightning-input>
+    <lightning-input value={region} name="region" type="text" placeholder="Région"></lightning-input>
+    <lightning-input value={plant} name="plant" type="text" placeholder="Plante"></lightning-input>
+    <lightning-input value={status} name="status" type="checkbox" label="Suivi à jour" class="slds-m-top_x-small"></lightning-input>
     <lightning-button label="Filtrer" class="slds-m-top_x-small" onclick={handleFilter}></lightning-button>
 </template>
