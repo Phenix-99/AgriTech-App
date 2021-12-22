@@ -78,4 +78,12 @@ public class ProjectController {
             return projList;
         
     }
+
+    //Get Recommantion about a specific plant hold in a specific project
+    @AuraEnabled(cacheable=true)
+    public static List<Recommandation__c> getPlantRecom(Id projectId){
+        return [SELECT Id, Etape__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId)];
+    }
+
+ 
 }

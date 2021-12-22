@@ -4,7 +4,7 @@ import retrieveProjects from '@salesforce/apex/ProjectController.retrieveProject
 //import {registerListener,unregisterAllListeners,fireEvent} from 'c/pubsub';
 import { NavigationMixin } from 'lightning/navigation';
 
-export default class ProjectRelated extends LightningElement {
+export default class ProjectRelated extends NavigationMixin(LightningElement) {
     projList;
     @api farmerId;
     //@track projId;
@@ -25,6 +25,7 @@ export default class ProjectRelated extends LightningElement {
     sendProjectId(event){
         //this.projId=event.target.dataset.recordid;
         //fireEvent(this.pageRef,'projId', this.projId);
+        console.log('FROM ', event.target.dataset);
         this[NavigationMixin.Navigate]({
             type: 'standard__recordPage',
             attributes: {
