@@ -6,7 +6,7 @@ public class ProjectController {
         List<Project__c> projects = [SELECT Id, Farmer__r.Name, Farmer__r.Phone__c,
                                   (SELECT Etape__c, Severite__c FROM Notes__r), Plant__r.Name,
                                   Pays__c, Region__c, Status__c FROM Project__c
-                                  WHERE Farmer__r.Name LIKE :farmerName +'%'];
+                                  WHERE Farmer__r.Name LIKE : + '%' + farmerName +'%'];
         
         return projects;
     }
