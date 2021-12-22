@@ -1,22 +1,14 @@
-import { LightningElement } from 'lwc';
-
-const NUM_OF_TABS = 3;
+import { LightningElement, wire, api } from 'lwc';
+import getPlantRecom from '@salesforce/apex/ProjectController.getPlantRecom';
 
 export default class ProjectRecommandation extends LightningElement {
 
+    @api recordId;
+    tabsRecomm
+
     activeValueMessage = '';
 
-    get tabs() {
-        const tabs = [];
-        for (let i = 0; i < NUM_OF_TABS; i++) {
-            tabs.push({
-                value: `${i}`,
-                label: `Item ${i}`,
-                content: `Tab Content ${i}`,
-            });
-        }
-        return tabs;
-    }
+    @wire(getPlantRecom, {projectId: '$recordId'}) plantRecom;
 
     handleActive(event) {
         this.activeValueMessage = `Tab with value ${event.target.value} is now active`;

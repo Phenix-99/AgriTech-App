@@ -3,7 +3,9 @@
         <template for:each={projList} for:item="proj">
             <section key={proj.Id}>
                 <ul>
-                    <li><lightning-button label={proj.Name} onclick={sendProjectId} data-recordid={proj.Id} variant="base"></lightning-button></li>
+                    <li>
+                        <button data-recordid={proj.Id} onclick={sendProjectId} class="slds-button slds-button_base">{proj.Name}</button>
+                    </li>
                 </ul>
                </section>
         </template>
