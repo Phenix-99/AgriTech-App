@@ -4,6 +4,15 @@
     <isExposed>true</isExposed>
     <targets>
         <target>lightning__AppPage</target>
-        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
     </targets>
+    <targetConfigs>
+            <targetConfig targets="lightning__RecordPage">
+                <property
+                    name="recordId"
+                    type="String"
+                    description="Automatically bind the page's record id to the component variable"
+                    default="{!recordId}" />
+            </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
