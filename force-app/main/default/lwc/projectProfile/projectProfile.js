@@ -3,12 +3,12 @@ import getProjectProfil from '@salesforce/apex/ProjectController.getProjectProfi
 
 export default class ProjectProfile extends LightningElement {
 
-    @api projectId;
+    @api recordId;
     @track profil;
     @track profil_severité;
 
 
-    @wire(getProjectProfil, {projectId: '$projectId'})
+    @wire(getProjectProfil, {projectId: '$recordId'})
     getprofil({data,error}){
         if(data){
             console.log(data);

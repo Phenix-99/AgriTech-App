@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <template if:true={projList}>
         <template for:each={projList} for:item="proj">
             <section key={proj.Id}>
@@ -10,15 +9,3 @@
         </template>
     </template>
 </template>
-=======
-         <template if:true={projList}>
-             <template for:each={projList} for:item="proj">
-                 <section key={proj.Id}>
-                     <ul>
-                         <li><lightning-button label={proj.Name} onclick={sendProjectId} data-recordid={proj.Id} variant="base"></lightning-button></li>
-                     </ul>
-                    </section>
-             </template>
-         </template>
-</template>
->>>>>>> fee1f308528cb985587faf84a16853955a5af816
