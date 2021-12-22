@@ -2,6 +2,7 @@ import { LightningElement, api, track, wire } from 'lwc';
 import retrieveProjects from '@salesforce/apex/ProjectController.retrieveProjects';
 import {CurrentPageReference} from 'lightning/navigation';
 import {registerListener,unregisterAllListeners,fireEvent} from 'c/pubsub';
+import { NavigationMixin } from 'lightning/navigation';
 
 export default class ProjectRelated extends LightningElement {
     projList;
@@ -24,7 +25,15 @@ export default class ProjectRelated extends LightningElement {
     sendProjectId(event){
         this.projId=event.target.dataset.recordid;
         fireEvent(this.pageRef,'projId', this.projId);
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: event.target.dataset.recordid,
+                actionName: "view"
+            },
+        });
     }
+   
 
     
 }
