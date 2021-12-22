@@ -3,8 +3,7 @@
     {
       "path": "force-app",
       "default": true
-    }, 
-    { "path" : "AgriTech" }
+    }
   ],
   "name": "AgriTech App",
   "namespace": "",
