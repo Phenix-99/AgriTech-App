@@ -1,14 +1,15 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import retrieveProjects from '@salesforce/apex/ProjectController.retrieveProjects';
-import {CurrentPageReference} from 'lightning/navigation';
-import {registerListener,unregisterAllListeners,fireEvent} from 'c/pubsub';
+//import {CurrentPageReference} from 'lightning/navigation';
+//import {registerListener,unregisterAllListeners,fireEvent} from 'c/pubsub';
+import { NavigationMixin } from 'lightning/navigation';
 
 export default class ProjectRelated extends LightningElement {
     projList;
     @api farmerId;
-    @track projId;
+    //@track projId;
     @api projIdExist;
-    @wire(CurrentPageReference) pageRef;
+    //@wire(CurrentPageReference) pageRef;
 
     connectedCallback(){
         if(this.farmerId && this.projIdExist){
@@ -22,9 +23,17 @@ export default class ProjectRelated extends LightningElement {
 
 
     sendProjectId(event){
-        this.projId=event.target.dataset.recordid;
-        fireEvent(this.pageRef,'projId', this.projId);
+        //this.projId=event.target.dataset.recordid;
+        //fireEvent(this.pageRef,'projId', this.projId);
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: event.target.dataset.recordid,
+                actionName: "view"
+            },
+        });
     }
+   
 
     
 }
