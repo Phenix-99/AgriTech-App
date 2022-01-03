@@ -53,5 +53,24 @@ public class ProjectController {
         return [SELECT Id, Etape__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId)];
     }
 
+    
+    //Get Last Recommantion for a specific project
+    @AuraEnabled(cacheable=true)
+    public static String getLastPlantRecom(Id projectId){
+        String currentStep = '';
+        List<Recommandation__c> recomList = [SELECT Id, Etape__c, Periodicite__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId)];
+        Date date_semi = [SELECT Id, Date_De_Semis__c FROM Project__c WHERE Id=: projectId LIMIT 1].Date_De_Semis__c;
+        
+        for (Recommandation__c recom : recomList) {
+            
+            if ((Date.today() >= date_semi) && (Date.today() <= date_semi.addDays(Integer.valueOf(recom.Periodicite__c)))) {
+                currentStep = recom.Etape__c;
+            }
+            
+            date_semi = date_semi.addDays(Integer.valueOf(recom.Periodicite__c));
+        }
+    
+        return currentStep;
+    }
  
 }
