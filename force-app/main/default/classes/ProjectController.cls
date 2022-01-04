@@ -50,16 +50,17 @@ public class ProjectController {
     //Get Recommantion about a specific plant hold in a specific project
     @AuraEnabled(cacheable=true)
     public static List<Recommandation__c> getPlantRecom(Id projectId){
-        return [SELECT Id, Etape__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId)];
+        return [SELECT Id, Etape__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ORDER BY Periodicite__c ASC];
     }
 
     
     //Get Last Recommantion for a specific project
     @AuraEnabled(cacheable=true)
-    public static String getLastPlantRecom(Id projectId){
+    public static String getCurrentStep(Id projectId){
         String currentStep = '';
-        List<Recommandation__c> recomList = [SELECT Id, Etape__c, Periodicite__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId)];
+        List<Recommandation__c> recomList = [SELECT Id, Etape__c, Periodicite__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ORDER BY Periodicite__c ASC];
         Date date_semi = [SELECT Id, Date_De_Semis__c FROM Project__c WHERE Id=: projectId LIMIT 1].Date_De_Semis__c;
+        String lastStep = recomList.get(recomList.size() - 1).Etape__c;
         
         for (Recommandation__c recom : recomList) {
             
@@ -68,6 +69,10 @@ public class ProjectController {
             }
             
             date_semi = date_semi.addDays(Integer.valueOf(recom.Periodicite__c));
+        }
+        
+        if (currentStep == '') {
+            currentStep = lastStep;
         }
     
         return currentStep;

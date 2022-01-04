@@ -1,6 +1,6 @@
 <template>
     <template if:true={plantRecom.data}>
-        <lightning-tabset variant="scoped">
+        <lightning-tabset variant="scoped" active-tab-value={currentStep.data}>
             <template for:each={plantRecom.data} for:item="recom">
                 <lightning-tab label={recom.Etape__c} key={recom.Id} value={recom.Etape__c} onactive={handleActive}>
                     <lightning-card title="Recommandations : ">
