@@ -1,4 +1,4 @@
-public with sharing class ProjectController {
+public without sharing class ProjectController {
     // To-Do
     // get all projects of a farmer by his name
     @AuraEnabled(cacheable=true)
