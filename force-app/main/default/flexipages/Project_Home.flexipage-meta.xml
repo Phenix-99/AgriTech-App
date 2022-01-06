@@ -4,7 +4,6 @@
         <itemInstances>
             <componentInstance>
                 <componentName>projectHome</componentName>
-                <identifier>c_projectHome1</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>

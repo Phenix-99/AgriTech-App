@@ -24,7 +24,6 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
-                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -38,7 +37,6 @@
                     <name>recordId</name>
                 </componentInstanceProperties>
                 <componentName>projectRecommandation</componentName>
-                <identifier>c_projectRecommandation1</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -49,7 +47,6 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
-                <identifier>force_detailPanel1</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -63,7 +60,6 @@
                     <name>recordId</name>
                 </componentInstanceProperties>
                 <componentName>projectProfile</componentName>
-                <identifier>c_projectProfile1</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-b79fdfca-7fed-4be4-bd8e-b0005ffc640d</name>
@@ -81,7 +77,6 @@
                     <value>Etapes</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>relatedListsTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -99,7 +94,6 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>detailTab</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -113,7 +107,6 @@
                     <value>Related Projects</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab1</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -128,7 +121,6 @@
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
-                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
