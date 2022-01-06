@@ -1,15 +1,13 @@
 <template>
     <template if:true={plantRecom.data}>
-        <lightning-tabset variant="scoped" active-tab-value={currentStep.data}>
+        <!-- active-tab-value={currentStep.data} -->
+        <lightning-tabset variant="scoped">
             <template for:each={plantRecom.data} for:item="recom">
                 <lightning-tab label={recom.Etape__c} key={recom.Id} value={recom.Etape__c} onactive={handleActive}>
                     <lightning-card title="Recommandations : ">
                         <p><lightning-formatted-text value={recom.Text__c} linkify></lightning-formatted-text></p>
                     </lightning-card>
-                    <lightning-card title="Note A propos du projet : ">
-                        <c-note-form project-id={recordId} etape={recom.Etape__c}>
-
-                        </c-note-form></lightning-card>
+                        <c-note-form project-id={recordId} etape={recom.Etape__c} rank={recom.Step_Rank__c}></c-note-form>
                 </lightning-tab>
             </template>
         </lightning-tabset>

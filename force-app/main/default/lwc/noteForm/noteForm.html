@@ -1,9 +1,14 @@
 <template>
-    <lightning-record-form
-        object-api-name={objectApiName}
-        fields={fields}
-        onsubmit={handleSubmit}
-        onsuccess={handleSuccess}
-    >
-    </lightning-record-form>
+    <lightning-card title={cardTitle}>
+
+        <lightning-record-form
+            object-api-name={objectApiName}
+            fields={fields}
+            record-id={noteId}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+        >
+        </lightning-record-form>
+
+    </lightning-card>
 </template>

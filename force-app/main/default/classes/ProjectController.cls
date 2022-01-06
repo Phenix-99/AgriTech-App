@@ -50,7 +50,7 @@ public without sharing class ProjectController {
     //Get Recommantion about a specific plant hold in a specific project
     @AuraEnabled(cacheable=true)
     public static List<Recommandation__c> getPlantRecom(Id projectId){
-        return [SELECT Id, Etape__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ];
+        return [SELECT Id, Etape__c, Text__c, Step_Rank__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ];
     }
 
     
@@ -77,5 +77,12 @@ public without sharing class ProjectController {
     
         return currentStep;
     }*/
+
+    //Get current Note for a specific project
+    @AuraEnabled(cacheable=true)
+    public static ID getProjectNoteByStepRank(Id projectId, Decimal stepRank) {
+        List<Note__c> noteList = [SELECT Id FROM Note__c WHERE Project__c = :projectId AND Step_Rank__c = :stepRank LIMIT 1];
+        return noteList[0].Id;
+    }
  
 }
