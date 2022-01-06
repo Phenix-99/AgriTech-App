@@ -28,7 +28,6 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>AgriTech</label>
     <navType>Standard</navType>
-    <tabs>Project_Home</tabs>
     <tabs>Project__c</tabs>
     <tabs>Plant__c</tabs>
     <tabs>Farmer__c</tabs>
