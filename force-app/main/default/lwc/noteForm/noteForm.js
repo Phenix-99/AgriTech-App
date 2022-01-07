@@ -87,7 +87,7 @@ export default class NoteForm extends LightningElement {
 
     handleSuccess(event) {
         const evt = new ShowToastEvent({
-            title: 'Operation success !',
+            title: 'Note created',
             message: 'Record ID: ' + event.detail.id,
             variant: 'success',
         });
