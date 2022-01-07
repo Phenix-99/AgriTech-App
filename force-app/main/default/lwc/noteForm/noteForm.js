@@ -8,7 +8,7 @@ import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import ETAPE_FIELD from '@salesforce/schema/Project__c.Etape_en_Cours__c';
 import PLANT_FIELD from '@salesforce/schema/Project__c.Plant__c';
 import getProjectNoteByStepRank from '@salesforce/apex/ProjectController.getProjectNoteByStepRank';
-import getStepByRank from '@salesforce/apex/ProjectController.getStepByRank';
+import getRecommandationByRank from '@salesforce/apex/ProjectController.getRecommandationByRank';
 
 export default class NoteForm extends LightningElement {
 
@@ -16,23 +16,27 @@ export default class NoteForm extends LightningElement {
     @api etape
     @api rank
     noteId;
+    step;
+    recommandation;
+    ready = false;
     objectApiName = NOTE_OBJECT;
     fields = [DATE_FIELD, SEVERITE_FIELD, DESCRIPTION_FIELD];
 
     
     get stepRank() {
-        console.log("get stepRank() (getFieldValue) : ", getFieldValue(this.project.data, ETAPE_FIELD));
+        //console.log("get stepRank() (getFieldValue) : ", getFieldValue(this.project.data, ETAPE_FIELD));
         if(this.rank == undefined) return getFieldValue(this.project.data, ETAPE_FIELD);
         return this.rank;
     }
 
     get plantId() {
-        console.log("get plantId() (getFieldValue) : ", getFieldValue(this.project.data, PLANT_FIELD));
+        //console.log("get plantId() (getFieldValue) : ", getFieldValue(this.project.data, PLANT_FIELD));
         return getFieldValue(this.project.data, PLANT_FIELD);
     }
 
     get cardTitle() {
-        if(this.etape == undefined && this.rank == undefined) return "Notes - "+this.step;
+        console.log("etape: " + this.etape + ", rank " + this.rank);
+        if(!(this.etape && this.rank)) return "Notes - "+this.step;
         return "Notes";
     }
 
@@ -40,33 +44,26 @@ export default class NoteForm extends LightningElement {
         return this.recordId;
     }
 
-    get step() {
-        console.log("get step() (stepByRank) : ", this.stepByRank.data);
-        if(this.etape == undefined) return this.stepByRank.data;
-        return this.etape;
-    }
-
     @wire(getRecord, { recordId: '$recordId', fields: [ETAPE_FIELD, PLANT_FIELD] }) project;
-    @wire(getStepByRank, {stepRank: '$stepRank', plantId: '$plantId'}) stepByRank;
+    @wire(getRecommandationByRank, {stepRank: '$stepRank', plantId: '$plantId'})
+    recommandationByRank({data, error}) {
+        if (data) {
+            console.log("recommandationByRank : ", data);
+            this.recommandation = data;
+            this.step = data.Etape__c;
+        } else if (error) {
+            console.log(error);
+            this.step = this.etape
+        }
+    }
     @wire(getProjectNoteByStepRank, {projectId: '$projectId', stepRank: '$stepRank'})
-    getProjectNoteByStepRank({error, data}) {
+    getProjectNoteByStepRank({data, error}) {
         if (data) {
             console.log("getProjectNoteByStepRank : ", data);
             this.noteId = data;
-        } else {
-            this.noteId = undefined;
+        } else if (error) {
+            console.log(error);
         }
-    }
-
-    connectedCallback() {
-        console.log("connectedCallback");
-        console.log("connectedCallback recordId : ", this.recordId);
-        console.log("connectedCallback noteId : ", this.noteId);
-        console.log("connectedCallback projectId : ", this.projectId);
-        console.log("connectedCallback step : ", this.step);
-        console.log("connectedCallback stepRank : ", this.stepRank);
-
-        
     }
 
     handleSubmit(event) {

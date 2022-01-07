@@ -1,14 +1,23 @@
 <template>
-    <lightning-card title={cardTitle}>
+    
+    <lightning-card>
+        <template if:true={recommandation}>
+            <lightning-card title="Recommandations : ">
+                <p><lightning-formatted-text value={recommandation.Text__c} linkify></lightning-formatted-text></p>
+            </lightning-card>
+        </template>
 
-        <lightning-record-form
-            object-api-name={objectApiName}
-            fields={fields}
-            record-id={noteId}
-            onsubmit={handleSubmit}
-            onsuccess={handleSuccess}
-        >
-        </lightning-record-form>
+        <lightning-card title={cardTitle}>
 
+            <lightning-record-form
+                object-api-name={objectApiName}
+                fields={fields}
+                record-id={noteId}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+            >
+            </lightning-record-form>
+
+        </lightning-card>
     </lightning-card>
 </template>

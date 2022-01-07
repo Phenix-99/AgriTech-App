@@ -68,11 +68,11 @@ public without sharing class ProjectController {
         
     //Get Last Recommantion for a specific project
     @AuraEnabled(cacheable=true)
-    public static String getStepByRank(Decimal stepRank, Id plantId) {
+    public static Recommandation__c getRecommandationByRank(Decimal stepRank, Id plantId) {
 
-        List<Recommandation__c> recomList = [SELECT Id, Etape__c FROM Recommandation__c WHERE Step_Rank__c =:stepRank AND Plant__c=:plantId];
+        List<Recommandation__c> recomList = [SELECT Id, Etape__c,Text__c FROM Recommandation__c WHERE Step_Rank__c =:stepRank AND Plant__c=:plantId];
     
-        return recomList[0].Etape__c;
+        return recomList[0];
     }
 
     //Get current Note for a specific project
