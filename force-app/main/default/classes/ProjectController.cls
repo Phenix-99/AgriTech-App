@@ -50,33 +50,30 @@ public without sharing class ProjectController {
     //Get Recommantion about a specific plant hold in a specific project
     @AuraEnabled(cacheable=true)
     public static List<Recommandation__c> getPlantRecom(Id projectId){
-        return [SELECT Id, Etape__c, Text__c, Step_Rank__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ];
+        return [SELECT Id, Etape__c, Text__c, Step_Rank__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ORDER BY Step_Rank__c ASC ];
     }
 
     
     //Get Last Recommantion for a specific project
-    /*@AuraEnabled(cacheable=true)
-    public static String getCurrentStep(Id projectId){
-        String currentStep = '';
-        List<Recommandation__c> recomList = [SELECT Id, Etape__c, Periodicite__c, Text__c FROM Recommandation__c WHERE Plant__c IN (SELECT Plant__c FROM Project__c WHERE Id=: projectId) ORDER BY Periodicite__c ASC];
-        Date date_semi = [SELECT Id, Date_De_Semis__c FROM Project__c WHERE Id=: projectId LIMIT 1].Date_De_Semis__c;
-        String lastStep = recomList.get(recomList.size() - 1).Etape__c;
+    @AuraEnabled(cacheable=true)
+    public static String getCurrentStep(Id projectId) {
+
+        Project__c proj = [SELECT Etape_en_Cours__c, Plant__c FROM Project__c WHERE Id = :projectId];
         
-        for (Recommandation__c recom : recomList) {
-            
-            if ((Date.today() >= date_semi) && (Date.today() <= date_semi.addDays(Integer.valueOf(recom.Periodicite__c)))) {
-                currentStep = recom.Etape__c;
-            }
-            
-            date_semi = date_semi.addDays(Integer.valueOf(recom.Periodicite__c));
-        }
-        
-        if (currentStep == '') {
-            currentStep = lastStep;
-        }
+        List<Recommandation__c> recomList = [SELECT Id, Etape__c FROM Recommandation__c WHERE Step_Rank__c =:proj.Etape_en_Cours__c AND Plant__c=:proj.Plant__c];
     
-        return currentStep;
-    }*/
+        return recomList[0].Etape__c;
+    }
+
+        
+    //Get Last Recommantion for a specific project
+    @AuraEnabled(cacheable=true)
+    public static String getStepByRank(Decimal stepRank, Id plantId) {
+
+        List<Recommandation__c> recomList = [SELECT Id, Etape__c FROM Recommandation__c WHERE Step_Rank__c =:stepRank AND Plant__c=:plantId];
+    
+        return recomList[0].Etape__c;
+    }
 
     //Get current Note for a specific project
     @AuraEnabled(cacheable=true)
