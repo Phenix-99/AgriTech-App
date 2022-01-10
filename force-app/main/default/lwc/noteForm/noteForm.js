@@ -83,6 +83,7 @@ export default class NoteForm extends LightningElement {
     }
 
     handleSuccess(event) {
+        this.noteId = event.detail.id;
         const evt = new ShowToastEvent({
             title: 'Note created',
             message: 'Record ID: ' + event.detail.id,
