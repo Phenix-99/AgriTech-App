@@ -1,4 +1,4 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import NOTE_OBJECT from '@salesforce/schema/Note__c';
 import DATE_FIELD from '@salesforce/schema/Note__c.Date__c';
@@ -15,7 +15,7 @@ export default class NoteForm extends LightningElement {
     @api recordId;
     @api etape
     @api rank
-    noteId;
+    @track noteId;
     step;
     recommandation;
     ready = false;
@@ -89,6 +89,16 @@ export default class NoteForm extends LightningElement {
             variant: 'success',
         });
         this.dispatchEvent(evt);
+    }
+
+    handleUploadFinished(event) {
+        // Get the list of uploaded files
+        const uploadedFiles = event.detail.files;
+        this.dispatchEvent(new ShowToastEvent({
+            title: 'Upload Done',
+            message: 'No. of files uploaded : ' + uploadedFiles.length,
+            variant: 'success',
+        }));
     }
     
 }
