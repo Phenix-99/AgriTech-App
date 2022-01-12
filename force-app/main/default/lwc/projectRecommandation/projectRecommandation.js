@@ -5,8 +5,7 @@ import getCurrentStep from '@salesforce/apex/ProjectController.getCurrentStep';
 export default class ProjectRecommandation extends LightningElement {
 
     @api recordId;
-    tabsRecomm
-
+    tabsRecomm;
     activeValueMessage = '';
 
     @wire(getPlantRecom, {projectId: '$recordId'}) plantRecom;

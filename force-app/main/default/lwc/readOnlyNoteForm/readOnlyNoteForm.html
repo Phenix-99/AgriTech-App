@@ -1,0 +1,25 @@
+<template>
+    
+    <lightning-card>
+        <template if:true={recommandation}>
+            <lightning-card title="Recommandations : ">
+                <p class="slds-m-around_medium"><lightning-formatted-text value={recommandation.Text__c} linkify></lightning-formatted-text></p>
+            </lightning-card>
+        </template>
+
+        <lightning-card title={cardTitle}>
+            <div class="slds-m-around_medium">
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    fields={fields}
+                    record-id={noteId}
+                    onsubmit={handleSubmit}
+                    onsuccess={handleSuccess}
+                    mode="readonly"
+                >
+                </lightning-record-form>
+            </div>
+
+        </lightning-card>
+    </lightning-card>
+</template>

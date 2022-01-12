@@ -9,21 +9,32 @@ import ETAPE_FIELD from '@salesforce/schema/Project__c.Etape_en_Cours__c';
 import PLANT_FIELD from '@salesforce/schema/Project__c.Plant__c';
 import getProjectNoteByStepRank from '@salesforce/apex/ProjectController.getProjectNoteByStepRank';
 import getRecommandationByRank from '@salesforce/apex/ProjectController.getRecommandationByRank';
-import { subscribe, MessageContext } from 'lightning/messageService';
+import { publish, MessageContext } from 'lightning/messageService';
 import agrixMessageChannel from '@salesforce/messageChannel/agrixMessageChannel__c';
 
 export default class NoteForm extends LightningElement {
 
     @api recordId;
-    @api etape;
-    @api rank;
+    @api etape
+    @api rank
     @track noteId;
     step;
     recommandation;
     ready = false;
     objectApiName = NOTE_OBJECT;
     fields = [DATE_FIELD, SEVERITE_FIELD, DESCRIPTION_FIELD];
-    subscription = null;
+
+    @wire(MessageContext)
+    messageContext;
+
+    renderedCallback() {
+        const data = {
+            step: this.etape,
+            rank: this.rank
+        }
+
+        publish(this.messageContext, agrixMessageChannel, data);
+    }
     
     get stepRank() {
         //console.log("get stepRank() (getFieldValue) : ", getFieldValue(this.project.data, ETAPE_FIELD));
@@ -58,6 +69,7 @@ export default class NoteForm extends LightningElement {
             this.step = this.etape
         }
     }
+
     @wire(getProjectNoteByStepRank, {projectId: '$projectId', stepRank: '$stepRank'})
     getProjectNoteByStepRank({data, error}) {
         if (data) {
@@ -68,39 +80,4 @@ export default class NoteForm extends LightningElement {
         }
     }
 
-    handleSubmit(event) {
-        event.preventDefault(); // stop the form from submitting
-        //console.log("handleSubmit projectId : ", this.projectId);
-        //console.log("handleSubmit noteId : ", this.noteId);
-        //console.log("handleSubmit step : ", this.step);
-        //console.log("handleSubmit stepRank : ", this.stepRank);
-        const fields = event.detail.fields;
-        fields.Project__c = this.projectId; // modify a Project Id
-        fields.Etape__c = this.step; // modify a Note Step
-        fields.Step_Rank__c = this.stepRank; // modify a Note Step Rank
-
-        //console.log("FROM Handle submit ", JSON.stringify(fields));
-        this.template.querySelector('lightning-record-form').submit(fields);
-    }
-
-    handleSuccess(event) {
-        this.noteId = event.detail.id;
-        const evt = new ShowToastEvent({
-            title: 'Note created',
-            message: 'Record ID: ' + event.detail.id,
-            variant: 'success',
-        });
-        this.dispatchEvent(evt);
-    }
-
-    handleUploadFinished(event) {
-        // Get the list of uploaded files
-        const uploadedFiles = event.detail.files;
-        this.dispatchEvent(new ShowToastEvent({
-            title: 'Upload Done',
-            message: 'No. of files uploaded : ' + uploadedFiles.length,
-            variant: 'success',
-        }));
-    }
-    
 }

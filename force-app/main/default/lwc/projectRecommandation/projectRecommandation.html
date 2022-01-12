@@ -3,7 +3,7 @@
         <lightning-tabset variant="scoped" active-tab-value={currentStep.data} class="tab-custom">
             <template for:each={plantRecom.data} for:item="recom">
                 <lightning-tab label={recom.Etape__c} key={recom.Id} value={recom.Etape__c} onactive={handleActive}>
-                        <c-note-form record-id={recordId} etape={recom.Etape__c} rank={recom.Step_Rank__c}></c-note-form>
+                    <c-read-only-note-form record-id={recordId} etape={recom.Etape__c} rank={recom.Step_Rank__c}></c-read-only-note-form>
                 </lightning-tab>
             </template>
         </lightning-tabset>
