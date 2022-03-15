@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Etape_en_Cours__c</fullName>
     <externalId>false</externalId>
-    <formula>FLOOR((( TODAY() - Date_De_Semis__c )/ Plant__r.Periodicite_Jours__c )+1)</formula>
+    <formula>IF(AND(Date_De_Semis__c &lt;= TODAY(), NOT(ISPICKVAL(Etat__c, &quot;Etude&quot;))), IF(AND(NOT(ISPICKVAL(Etat__c, &quot;Terminé&quot;)), NOT(ISPICKVAL(Etat__c, &quot;Annulé&quot;))), FLOOR((( TODAY() - Date_De_Semis__c )/ Plant__r.Periodicite_Jours__c )+1), null), 0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Etape en Cours</label>
     <precision>18</precision>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Printed_Reference__c</fullName>
+    <externalId>false</externalId>
+    <formula>RIGHT(  TEXT( YEAR(  DATEVALUE(CreatedDate) )) , 2)  +  RIGHT( &apos;0&apos;+  TEXT(MONTH(DATEVALUE(CreatedDate)))    , 2)  +  RIGHT( &apos;0&apos;+   TEXT(DAY(DATEVALUE(CreatedDate)))      , 2)  +  Reference__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Printed Reference</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

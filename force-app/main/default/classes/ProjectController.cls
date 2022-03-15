@@ -81,5 +81,4 @@ public without sharing class ProjectController {
         List<Note__c> noteList = [SELECT Id FROM Note__c WHERE Project__c = :projectId AND Step_Rank__c = :stepRank LIMIT 1];
         return noteList[0].Id;
     }
- 
 }

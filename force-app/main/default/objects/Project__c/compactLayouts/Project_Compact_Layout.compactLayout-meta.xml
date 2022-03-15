@@ -8,7 +8,6 @@
     <fields>Etape_en_Cours__c</fields>
     <fields>Date_Prise_Contact__c</fields>
     <fields>Status__c</fields>
-    <fields>isUpdate__c</fields>
     <fields>Region__c</fields>
     <fields>Date_Anticipe_Recolte__c</fields>
     <label>Project Compact Layout</label>

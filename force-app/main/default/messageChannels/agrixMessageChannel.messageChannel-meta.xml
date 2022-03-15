@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
-    <masterLabel>agrixMessageChannel</masterLabel>
-    <isExposed>true</isExposed>
     <description>Message channel to allow communication between AgrixTech component.</description>
+    <isExposed>true</isExposed>
     <lightningMessageFields>
-        <fieldName>step</fieldName>
         <description>The current step</description>
+        <fieldName>step</fieldName>
     </lightningMessageFields>
     <lightningMessageFields>
-        <fieldName>rank</fieldName>
         <description>The current rank</description>
+        <fieldName>rank</fieldName>
     </lightningMessageFields>
+    <masterLabel>agrixMessageChannel</masterLabel>
 </LightningMessageChannel>
