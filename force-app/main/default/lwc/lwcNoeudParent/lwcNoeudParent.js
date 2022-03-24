@@ -14,7 +14,7 @@ export default class LwcNoeudParent extends LightningElement {
         return this.level + 1
     }
     get expandedClass() {
-        return this.expanded?"expanded":''
+        return this.expanded ? "expanded" : ''
     }
     toggleExpand(){
         this.expanded=!this.expanded

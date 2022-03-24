@@ -23,4 +23,22 @@
 
 .mainTitle {
     font-weight: bolder;
+    font-size: large;
+}
+
+.item button {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.expanded {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
 }

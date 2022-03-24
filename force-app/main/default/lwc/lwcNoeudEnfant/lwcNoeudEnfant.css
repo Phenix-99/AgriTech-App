@@ -1,7 +1,23 @@
-.checkboxStyle {
-    margin-right: 8px;
+.selected {
+    cursor: pointer;
+    background-color: none;
+    transition: ease-in-out 0.2s;
 }
 
-.checkbox {
-    
+.selected:active {
+    background-color: #6bafe8;
+}
+
+.selected:hover {
+    background-color: #6bafe8;
+}
+
+.selected .checkboxStyle {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.selected .checkboxLabel {
+    font-size: medium;
+    color: #18212e;
 }

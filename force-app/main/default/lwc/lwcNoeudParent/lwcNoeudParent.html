@@ -5,8 +5,7 @@
 <!-- Lwc Noeud Parent -->
 <template>
     <div aria-level={level}>
-        <div class="item">
-         <span if:true={expanded} onclick={toggleExpand} class={expandedClass}>&#x25BC;</span><span if:false={expanded} onclick={toggleExpand} class={expandedClass}>&#9654;</span><span class="mainTitle">{value.libelle}</span>
+        <div class="item"><button onclick={toggleExpand} class={expandedClass}>&#x25B6;</button><span class="mainTitle">{value.libelle}</span>
         </div>
         <div if:true={expanded} class="items ">
             <template for:each={entries} for:item="entry">
