@@ -1,0 +1,23 @@
+<!--
+ - Created by max on 24/03/2022.
+ -->
+
+<!-- Lwc Noeud Parent -->
+<template>
+    <div aria-level={level}>
+        <div class="item">
+         <button onclick={toggleExpand} class={expandedClass}>x</button>   <span>{value.libelle}</span>
+        </div>
+        <div if:true={expanded} class="items ">
+            <template for:each={entries} for:item="entry">
+                     <template if:true={entry.fils.length}>
+                        <c-lwc-noeud-parent key={entry.numero} value={entry} entries={entry.fils}
+                                            level={level2}></c-lwc-noeud-parent>
+                    </template>
+                    <template if:false={entry.fils.length}>
+                       <c-lwc-noeud-enfant key={entry.numero} value={entry} level={level2} ></c-lwc-noeud-enfant>
+                    </template>
+            </template>
+        </div>
+    </div>
+</template>

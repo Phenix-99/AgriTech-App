@@ -1,0 +1,19 @@
+<!--
+ - Created by max on 23/03/2022.
+ -->
+
+<!-- Tree -->
+<template>
+    <template if:true={apiresult}>
+        <template for:each={apiresult} for:item="entry">
+            <template if:true={entry.fils.length}>
+                <c-lwc-noeud-parent key={entry.numero} value={entry} entries={entry.fils}
+                                    level={level}></c-lwc-noeud-parent>
+            </template>
+            <template if:false={entry.fils.length}>
+                <c-lwc-noeud-enfant key={entry.numero} value={entry}></c-lwc-noeud-enfant>
+            </template>
+
+        </template>
+    </template>
+</template>

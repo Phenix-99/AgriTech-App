@@ -1,0 +1,22 @@
+/**
+ * Created by max on 24/03/2022.
+ */
+/**
+ * Created by max on 23/03/2022.
+ */
+[aria-level="1"] .items {
+    padding-left: 1rem;
+}
+
+[aria-level="2"] .items {
+    padding-left: 2rem;
+}
+[aria-level="3"] .items {
+    padding-left: 3rem;
+}
+[aria-level="4"] .items {
+    padding-left: 4rem;
+}
+[aria-level="5"] .items {
+    padding-left: 5rem;
+}
