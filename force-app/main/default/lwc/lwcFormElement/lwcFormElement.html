@@ -1,4 +1,13 @@
 <template>
+    <template if:true={isPercent}>
+        <lightning-input type="number" value="75" name={jsonElement.numero} label={jsonElement.libelle} formatter="percent" ></lightning-input>
+    </template>
+    <template if:true={isCurrency}>
+        <lightning-input type="number" value="145.33" name={jsonElement.numero} label={jsonElement.libelle} formatter="currency" ></lightning-input>
+    </template>
+    <template if:true={isDate}>
+        <lightning-input type="date" value="01/01/2022" name={jsonElement.numero} date-style="short" label={jsonElement.libelle} ></lightning-input>
+    </template>
     <template if:true={isCheckbox}>
         <lightning-input type="checkbox" label={jsonElement.libelle} name={jsonElement.numero}></lightning-input>
     </template>

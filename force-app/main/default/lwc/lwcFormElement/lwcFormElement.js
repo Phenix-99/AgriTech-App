@@ -8,6 +8,12 @@ export default class LwcFormElement extends LightningElement {
             return 'checkbox';
         } else if (this.jsonElement.codeFormat == 'LD') {
             return 'select';
+        } else if (this.jsonElement.codeFormat == 'DA') {
+            return 'date';
+        } else if (this.jsonElement.codeFormat == 'MT') {
+            return 'currency';
+        } else if (this.jsonElement.codeFormat == 'TX') {
+            return 'percent';
         } else {
             return 'text';
         }
@@ -15,6 +21,18 @@ export default class LwcFormElement extends LightningElement {
 
     get isCheckbox() {
         return this.elementType == 'checkbox';
+    }
+
+    get isDate() {
+        return this.elementType == 'date';
+    }
+
+    get isCurrency() {
+        return this.elementType == 'currency';
+    }
+
+    get isPercent() {
+        return this.elementType == 'percent';
     }
 
     get isSelect() {
