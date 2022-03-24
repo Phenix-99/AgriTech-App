@@ -20,3 +20,7 @@
 [aria-level="5"] .items {
     padding-left: 5rem;
 }
+
+.mainTitle {
+    font-weight: bolder;
+}
