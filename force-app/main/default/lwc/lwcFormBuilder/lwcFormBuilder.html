@@ -1,3 +1,9 @@
 <template>
-    
+    <lightning-card>
+        <template if:true={jsonForm}>
+            <template for:each={jsonForm} for:item="fromElement">
+                    <c-lwc-form-element  key={fromElement.numero} json-element={fromElement}></c-lwc-form-element>
+            </template>
+        </template>
+    </lightning-card>
 </template>
