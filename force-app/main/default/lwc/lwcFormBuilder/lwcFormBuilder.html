@@ -1,0 +1,9 @@
+<template>
+    <lightning-card>
+        <div class="mainDiv">
+            <template for:each={result} for:item="res">
+                <c-form-element value={res} key={res.numero}></c-form-element>
+            </template>
+        </div>
+    </lightning-card>
+</template>
