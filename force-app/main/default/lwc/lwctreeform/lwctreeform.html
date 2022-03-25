@@ -1,0 +1,23 @@
+<!--
+ - Created by max on 24/03/2022.
+ -->
+
+<!-- LwcTreeForm -->
+<template>
+    <div>
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <div class="slds-box slds-p-around_medium">
+                    <c-lwc07cretree onselect={onTreeItemSelected}></c-lwc07cretree>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <template if:true={formConfig}>
+                    <div class="slds-box slds-p-around_small">
+                        <c-lwc-form-builder form-config={formConfig}></c-lwc-form-builder>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
