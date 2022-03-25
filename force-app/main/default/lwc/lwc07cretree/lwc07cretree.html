@@ -10,10 +10,12 @@
                 <template for:each={apiresult} for:item="entry">
                     <template if:true={entry.fils.length}>
                         <c-lwc-noeud-parent key={entry.numero} value={entry} entries={entry.fils}
+                                            onselect={itemSelected} selected-key={selectedKey}
                                             level={level}></c-lwc-noeud-parent>
                     </template>
                     <template if:false={entry.fils.length}>
-                        <c-lwc-noeud-enfant key={entry.numero} value={entry}></c-lwc-noeud-enfant>
+                        <c-lwc-noeud-enfant key={entry.numero} value={entry}
+                                            onselect={itemSelected} selected-key={selectedKey}></c-lwc-noeud-enfant>
                     </template>
                 </template>
             </template>

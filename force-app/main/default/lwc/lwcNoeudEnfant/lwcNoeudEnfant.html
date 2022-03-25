@@ -4,7 +4,8 @@
 
 <!-- Lwc Noeud Enfant -->
 <template>
-    <div aria-level={level} class="selected" style="margin-left: 4px;" role="button">
-        <input type="checkbox" class="checkboxStyle"/><span class="checkboxLabel">{value.libelle}</span>
+    <div onclick={select} class={selectedClass} aria-level={level}  style="margin-left: 4px;">
+        <input type="checkbox" class="checkboxStyle"/>
+        <span class="checkboxLabel">{value.libelle}</span>
     </div>
 </template>

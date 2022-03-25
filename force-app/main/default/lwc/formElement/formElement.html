@@ -1,7 +1,7 @@
 <template>
-    <div if:true={isList}>
+    <div if:true={isList} class="eltStyle">
         <div class="slds-form-element">
-            <label class="slds-form-element__label" for="select-01">{value.libelle}</label>
+            <label class="slds-form-element__label label">{value.libelle}</label>
             <div class="slds-form-element__control">
               <div class="slds-select_container">
                 <select class="slds-select">
@@ -13,24 +13,24 @@
             </div>
         </div>
     </div>
-    <div if:true={isCheckbox}>
+    <div if:true={isCheckbox} class="eltStyle">
         <input type="checkbox" name="options" id={value.libelle} class="checkboxStyle"/>
                 <label class="slds-checkbox__label">
                   <span class="slds-checkbox_faux"></span>
-                  <span class="slds-form-element__label">{value.libelle}</span>
+                  <span class="slds-form-element__label label">{value.libelle}</span>
                 </label>
     </div>
-    <div if:true={isInputTypeNumber}>
+    <div if:true={isInputTypeNumber} class="eltStyle">
         <div class="slds-form-element">
-            <label class="slds-form-element__label">{value.libelle}</label>
+            <label class="slds-form-element__label label">{value.libelle}</label>
             <div class="slds-form-element__control">
               <input type="number" class="slds-input" />
             </div>
           </div>
     </div>
-    <div if:true={isDate}>
+    <div if:true={isDate} class="eltStyle">
         <div class="slds-form-element">
-            <label class="slds-form-element__label">{value.libelle}</label>
+            <label class="slds-form-element__label label">{value.libelle}</label>
             <div class="slds-form-element__control">
               <input type="date" class="slds-input" />
             </div>
@@ -39,9 +39,9 @@
     <div if:true={isSeparator}>
         <hr/>
     </div>
-    <div if:true={isTaux}>
+    <div if:true={isTaux} class="eltStyle">
         <div class="slds-form-element">
-            <label class="slds-form-element__label">{value.libelle}</label>
+            <label class="slds-form-element__label label">{value.libelle}</label>
             <div class="slds-form-element__control">
               <input type="number" class="slds-input" />
             </div>

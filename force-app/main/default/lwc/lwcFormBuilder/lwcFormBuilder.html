@@ -1,8 +1,8 @@
 <template>
     <lightning-card>
         <div class="mainDiv">
-            <template for:each={result} for:item="res">
-                <c-form-element value={res} key={res.numero}></c-form-element>
+            <template for:each={formConfig} for:item="config">
+                <c-form-element value={config} key={config.numero}></c-form-element>
             </template>
         </div>
     </lightning-card>
