@@ -4,10 +4,6 @@
     transition: ease-in-out 0.2s;
 }
 
-.selected:active {
-    background-color: #6bafe8;
-}
-
 .selected:hover {
     background-color: #6bafe8;
 }
@@ -20,4 +16,18 @@
 .selected .checkboxLabel {
     font-size: medium;
     color: #18212e;
+}
+
+.hovered {
+    background-color: none;
+    transition: ease-in-out 0.2s;
+}
+
+.hovered .checkboxStyle {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.hovered:hover {
+    background-color: #6bafe8;
 }

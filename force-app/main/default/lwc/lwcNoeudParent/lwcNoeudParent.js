@@ -9,6 +9,7 @@ export default class LwcNoeudParent extends LightningElement {
     @api entries;
     @api level;
     expanded;
+    @api selectedKey;
 
     get level2() {
         return this.level + 1
@@ -18,5 +19,13 @@ export default class LwcNoeudParent extends LightningElement {
     }
     toggleExpand(){
         this.expanded=!this.expanded
+    }
+
+    itemSelected(e){
+        this.dispatchEvent(new CustomEvent("select", {
+            detail: {
+                ...e.detail
+            }
+        }));
     }
 }

@@ -1,4 +1,7 @@
 <template>
+    <template if:true={isHr}>
+        <lightning-input type="number" value="75" name={jsonElement.numero} label={jsonElement.libelle} formatter="percent" ></lightning-input>
+    </template>
     <template if:true={isPercent}>
         <lightning-input type="number" value="75" name={jsonElement.numero} label={jsonElement.libelle} formatter="percent" ></lightning-input>
     </template>

@@ -11,10 +11,11 @@
             <template for:each={entries} for:item="entry">
                      <template if:true={entry.fils.length}>
                         <c-lwc-noeud-parent key={entry.numero} value={entry} entries={entry.fils}
+                                            onselect={itemSelected} selected-key={selectedKey}
                                             level={level2}></c-lwc-noeud-parent>
                     </template>
                     <template if:false={entry.fils.length}>
-                       <c-lwc-noeud-enfant key={entry.numero} value={entry} level={level2} ></c-lwc-noeud-enfant>
+                       <c-lwc-noeud-enfant key={entry.numero} value={entry} level={level2}  onselect={itemSelected} selected-key= {selectedKey} ></c-lwc-noeud-enfant>
                     </template>
             </template>
         </div>
