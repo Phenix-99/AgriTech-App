@@ -6,15 +6,22 @@
 <template>
     <div>
         <lightning-layout>
-            <lightning-layout-item flexibility="auto" padding="around-small">
-                <div class="slds-box slds-p-around_medium">
+            <lightning-layout-item  size="4" medium-device-size="4" flexibility="auto" padding="around-small">
+                <div class="slds-box slds-box slds-p-around_none">
                     <c-lwc07cretree onselect={onTreeItemSelected}></c-lwc07cretree>
                 </div>
             </lightning-layout-item>
-            <lightning-layout-item flexibility="auto" padding="around-small">
+            <lightning-layout-item  size="8" medium-device-size="8" flexibility="auto" padding="around-small">
                 <template if:true={formConfig}>
-                    <div class="slds-box slds-p-around_small">
-                        <c-lwc-form-builder form-config={formConfig}></c-lwc-form-builder>
+                    <div class="slds-box slds-box slds-p-around_none">
+                        <lightning-card>
+                            <h3 slot="title">
+                                Detail {libelle}
+                            </h3>
+                            <div class="slds-scrollable_y slds-var-p-around_medium" style="height:30rem">
+                                <c-lwc-form-builder form-config={formConfig}></c-lwc-form-builder>
+                            </div>
+                        </lightning-card>
                     </div>
                 </template>
             </lightning-layout-item>

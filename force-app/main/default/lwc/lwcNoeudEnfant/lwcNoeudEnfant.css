@@ -30,16 +30,16 @@ a .checkboxLabel {
 
 .selected {
     cursor: pointer;
-    background-color: #6bafe8;
+    background-color: #7dab65;
     transition: ease-in-out 0.2s;
 }
-
+/* #6bafe8; */
 .selected:hover {
-    background-color: #6bafe8;
+    background-color: #7dab65;
 }
 
 .selected:active {
-    background-color: #6bafe8;
+    background-color: #7dab65;
 }
 
 .selected .checkboxStyle {
@@ -70,5 +70,5 @@ a .checkboxLabel {
 }
 
 .hovered:hover {
-    background-color: #6bafe8;
+    background-color: #7dab65;
 }
