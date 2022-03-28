@@ -15,7 +15,7 @@ export default class FormElement extends LightningElement {
         return this.value.codeFormat === 'LD' ? true : false;
     }
 
-    get isInputTypeNumber() {
+    get isMontant() {
         return this.value.codeFormat === 'MT' ? true : false;
     }
 

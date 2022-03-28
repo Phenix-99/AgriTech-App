@@ -6,7 +6,7 @@
         <label class="slds-form-element__label label">{libelle}</label>
         <div class="slds-form-element__control">
           <div class="slds-select_container">
-            <select class="slds-select">
+            <select name={value.numero} class="slds-select">
                 <template for:each={value.valeursCondition} for:item="item">
                     <option key={item.codeCondition}>{item.libelle}</option>
                 </template>
@@ -15,24 +15,6 @@
         </div>
     </div>
     </div></div>
-
-    <!-- 
-      <div if:true={isCheckbox} class="slds-form__row">
-    <div class="slds-form__item" role="listitem">
-      <div class="slds-form-element slds-form-element_horizontal slds-p-around_none eltStyle">
-      <div class="slds-form-element__control">
-        <div class="slds-checkbox">
-          <input type="checkbox" name="default" id={value.numero} />
-          <label class="slds-checkbox__label" for={value.numero}>
-            <span class="slds-form-element__label">{libelle}</span>
-            <span class="slds-checkbox_faux"></span>
-          </label>
-        </div>
-      </div>
-    </div> 
-    </div></div>
-  -->
-
     
     <div if:true={isCheckbox} class="slds-form__row">
     <div class="slds-form__item" role="listitem">
@@ -40,7 +22,7 @@
       <label class="slds-form-element__label label">{libelle}</label>
       <div class="slds-form-element__control">
         <div class="slds-checkbox">
-          <input type="checkbox" name="default" id={value.numero} />
+          <input name={value.numero} type="checkbox" id={value.numero} />
           <label class="slds-checkbox__label" for={value.numero}>
             <span class="slds-checkbox_faux"></span>
           </label>
@@ -51,26 +33,30 @@
 
 
     
-  <div if:true={isInputTypeNumber} class="slds-form__row">
+  <div if:true={isMontant} class="slds-form__row">
     <div class="slds-form__item" role="listitem">
-  <div class="eltStyle slds-form-element slds-form-element_horizontal">
+      <lightning-input name={value.numero} type="number" formatter="currency" label={libelle} variant="label-inline"></lightning-input>
+      <!-- <div class="eltStyle slds-form-element slds-form-element_horizontal">
         <label class="slds-form-element__label label">{libelle}</label>
         <div class="slds-form-element__control">
-          <input type="number" class="slds-input" />
+          <input name={value.numero} type="number" class="slds-input" />
         </div>
+      </div> -->
     </div>
-  </div></div>
+  </div>
 
     
     <div if:true={isDate} class="slds-form__row">
-    <div class="slds-form__item" role="listitem">
-    <div class="eltStyle slds-form-element slds-form-element_horizontal">
-        <label class="slds-form-element__label label">{libelle}</label>
-        <div class="slds-form-element__control">
-          <input type="date" class="slds-input" />
-        </div>
+      <div class="slds-form__item" role="listitem">
+        <lightning-input name={value.numero} type="date" date-style="short" label={libelle} variant="label-inline"></lightning-input>
+        <!-- <div class="eltStyle slds-form-element slds-form-element_horizontal">
+          <label class="slds-form-element__label label">{libelle}</label>
+          <div class="slds-form-element__control">
+            <input name={value.numero} type="date" class="slds-input" />
+          </div>
+        </div> -->
+      </div>
     </div>
-  </div></div>
 
     
     <div if:true={isSeparator}>
@@ -78,13 +64,15 @@
     </div>
     
     <div if:true={isTaux} class="slds-form__row">
-    <div class="slds-form__item" role="listitem">
-    <div class="eltStyle slds-form-element slds-form-element_horizontal">
-        <label class="slds-form-element__label label">{libelle}</label>
-        <div class="slds-form-element__control">
-          <input type="number" class="slds-input" />
-        </div>
+      <div class="slds-form__item" role="listitem">
+        <lightning-input name={value.numero} type="number" date-style="short" formatter="percent" label={libelle} variant="label-inline"></lightning-input>
+        <!-- <div class="eltStyle slds-form-element slds-form-element_horizontal">
+            <label class="slds-form-element__label label">{libelle}</label>
+            <div class="slds-form-element__control">
+              <input name={value.numero} type="number" class="slds-input" />
+            </div>
+        </div> -->
+      </div>
     </div>
-  </div></div>
 
 </template>

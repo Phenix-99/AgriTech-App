@@ -12,6 +12,11 @@ export default class LwcNoeudEnfant extends LightningElement {
     get selectedClass(){
         return this.selectedKey === this.value.numero ? 'selected item' : 'hovered item'
     }
+
+    get checked(){
+        return this.selectedKey === this.value.numero
+    }
+
     select(e) {
         e.preventDefault();
         this.dispatchEvent(new CustomEvent("select", {

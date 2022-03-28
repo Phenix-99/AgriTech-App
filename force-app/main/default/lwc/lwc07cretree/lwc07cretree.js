@@ -17,7 +17,7 @@ export default class LWC07CRE_Tree extends LightningElement {
         xhr.onload = () =>console.log (this.apiresult = JSON.parse(xhr.responseText));
         xhr.send(null);
     }
-    itemSelected(e){
+    itemSelected(e) {
         this.selectedKey=e.detail.key;
         this.selectedItem=e.detail.item;
         console.log('selected',JSON.parse(JSON.stringify( e.detail)))
