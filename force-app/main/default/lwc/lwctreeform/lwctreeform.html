@@ -18,8 +18,14 @@
                             <h3 slot="title">
                                 Detail {libelle}
                             </h3>
-                            <div class="slds-scrollable_y slds-var-p-around_medium" style="height:30rem">
-                                <c-lwc-form-builder form-config={formConfig}></c-lwc-form-builder>
+                            
+                            <div class="slds-scrollable_y slds-var-p-around_medium slds-form" style="height:30rem">
+                                <fieldset class="slds-form-element slds-form-element_compound">
+                                    <div>
+                                        <span class="form_legend">Conditions</span>
+                                    </div>
+                                    <c-lwc-form-builder form-config={formConfig}></c-lwc-form-builder>
+                                </fieldset>
                             </div>
                         </lightning-card>
                     </div>
