@@ -1,169 +1,129 @@
 [
-  {
-      "numero": 3,
-      "numeroOrdre": 100,
-      "codeFormat": "LD",
-      "libelleFormat": "Liste déroulante                ",
-      "libelle": "Autres avenants                 ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": [
-          {
-              "codeCondition": "AA",
-              "libelle": "Changement de véhicule          ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "BB",
-              "libelle": "Changement d'immatriculation    ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "CC",
-              "libelle": "Garantie temporaire             ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "DD",
-              "libelle": "Résiliation                     ",
-              "numeroOrdre": 100
-          }
-      ]
-  },
-  {
-      "numero": 23,
-      "numeroOrdre": 100,
-      "codeFormat": "LD",
-      "libelleFormat": "Liste déroulante                ",
-      "libelle": "Formule                         ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": [
-          {
-              "codeCondition": "AA",
-              "libelle": "Confort                         ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "BB",
-              "libelle": "Essentielle                     ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "CC",
-              "libelle": "Légale                          ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "DD",
-              "libelle": "Tiers                           ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "EE",
-              "libelle": "Tiers Confort                   ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "FF",
-              "libelle": "Tous risques                    ",
-              "numeroOrdre": 100
-          },
-          {
-              "codeCondition": "GG",
-              "libelle": "Tous risques confort            ",
-              "numeroOrdre": 100
-          }
-      ]
-  },
-  {
-      "numero": 84,
-      "numeroOrdre": 100,
-      "codeFormat": "CA",
-      "libelleFormat": "Case à cocher                   ",
-      "libelle": "Assistance                      ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 87,
-      "numeroOrdre": 100,
-      "codeFormat": "CA",
-      "libelleFormat": "Case à cocher                   ",
-      "libelle": "RC Attelage                     ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 86,
-      "numeroOrdre": 100,
-      "codeFormat": "CA",
-      "libelleFormat": "Case à cocher                   ",
-      "libelle": "Valeur d'achat                  ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 85,
-      "numeroOrdre": 100,
-      "codeFormat": "CA",
-      "libelleFormat": "Case à cocher                   ",
-      "libelle": "Panne mécanique                 ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 999,
-      "numeroOrdre": 100,
-      "codeFormat": "CA",
-      "libelleFormat": "Case à cocher                   ",
-      "libelle": "Signature électronique          ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 78,
-      "numeroOrdre": 100,
-      "codeFormat": "MT",
-      "libelleFormat": "Montant                         ",
-      "libelle": "Montant                         ",
-      "typeMontant": true,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 41,
-      "numeroOrdre": 100,
-      "codeFormat": "DA",
-      "libelleFormat": "Date                            ",
-      "libelle": "Date d'échéance (JJ/MM/AAAA)    ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 175,
-      "numeroOrdre": 100,
-      "codeFormat": "SP",
-      "libelleFormat": "Séparateur                      ",
-      "libelle": "~                               ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  },
-  {
-      "numero": 140,
-      "numeroOrdre": 100,
-      "codeFormat": "TX",
-      "libelleFormat": "Taux                            ",
-      "libelle": "Taux                            ",
-      "typeMontant": false,
-      "obligatoire": false,
-      "valeursCondition": null
-  }
+              {
+                "numero": 3,
+                "numeroOrdre": 100,
+                "codeFormat": "LD",
+                "libelleFormat": "Liste déroulante                ",
+                "libelle": "Autres avenants                 ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": [
+                  {
+                    "codeCondition": "AA",
+                    "libelle": "Changement de véhicule          ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "BB",
+                    "libelle": "Changement d'immatriculation    ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "CC",
+                    "libelle": "Garantie temporaire             ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "DD",
+                    "libelle": "Résiliation                     ",
+                    "numeroOrdre": 100
+                  }
+                ]
+              },
+              {
+                "numero": 23,
+                "numeroOrdre": 100,
+                "codeFormat": "LD",
+                "libelleFormat": "Liste déroulante                ",
+                "libelle": "Formule                         ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": [
+                  {
+                    "codeCondition": "AA",
+                    "libelle": "Confort                         ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "BB",
+                    "libelle": "Essentielle                     ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "CC",
+                    "libelle": "Légale                          ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "DD",
+                    "libelle": "Tiers                           ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "EE",
+                    "libelle": "Tiers Confort                   ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "FF",
+                    "libelle": "Tous risques                    ",
+                    "numeroOrdre": 100
+                  },
+                  {
+                    "codeCondition": "GG",
+                    "libelle": "Tous risques confort            ",
+                    "numeroOrdre": 100
+                  }
+                ]
+              },
+              {
+                "numero": 84,
+                "numeroOrdre": 100,
+                "codeFormat": "CA",
+                "libelleFormat": "Case à cocher                   ",
+                "libelle": "Assistance                      ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": null
+              },
+              {
+                "numero": 87,
+                "numeroOrdre": 100,
+                "codeFormat": "CA",
+                "libelleFormat": "Case à cocher                   ",
+                "libelle": "RC Attelage                     ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": null
+              },
+              {
+                "numero": 86,
+                "numeroOrdre": 100,
+                "codeFormat": "CA",
+                "libelleFormat": "Case à cocher                   ",
+                "libelle": "Valeur d'achat                  ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": null
+              },
+              {
+                "numero": 85,
+                "numeroOrdre": 100,
+                "codeFormat": "CA",
+                "libelleFormat": "Case à cocher                   ",
+                "libelle": "Panne mécanique                 ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": null
+              },
+              {
+                "numero": 999,
+                "numeroOrdre": 100,
+                "codeFormat": "CA",
+                "libelleFormat": "Case à cocher                   ",
+                "libelle": "Signature électronique          ",
+                "typeMontant": false,
+                "obligatoire": false,
+                "valeursCondition": null
+              }
 ]

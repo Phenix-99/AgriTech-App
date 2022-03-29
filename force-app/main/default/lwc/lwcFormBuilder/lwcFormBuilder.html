@@ -2,7 +2,8 @@
     <lightning-card>
         <div class="mainDiv">
             <template for:each={formConfig} for:item="config">
-                <c-form-element value={config} key={config.numero}></c-form-element>
+                <c-form-element onvaluechanged={onValueChanged} config={config}
+                                key={config.numero}></c-form-element>
             </template>
         </div>
     </lightning-card>

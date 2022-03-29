@@ -1,0 +1,69 @@
+<template>
+    <div if:true={isList} class="slds-form__row">
+      <div class="slds-form__item" role="listitem">
+        <div class="slds-form-element slds-form-element_horizontal eltStyle">
+          <label class="slds-form-element__label label">{config.libelle}</label>
+          <lightning-combobox
+                  name={config.libelle}
+                  label={config.libelle}
+                  value={config.value}
+                  placeholder="Select ..."
+                  options={selectOptions}
+                  variant="label-hidden"
+                  onchange={onChange}></lightning-combobox>
+        </div>
+      </div>
+    </div>
+
+    <div if:true={isCheckbox} class="slds-form__row">
+      <div class="slds-form__item" role="listitem">
+        <div class="slds-form-element slds-form-element_horizontal eltStyle">
+          <label class="slds-form-element__label label">{config.libelle}</label>
+          <div class="slds-form-element__control">
+            <div class="slds-checkbox">
+              <input type="checkbox" name="options" id={config.numero} class="checkboxStyle"
+                    checked={config.value} onchange={onChange}>
+              <label class="slds-checkbox__label" for={config.numero}>
+                  <span class="slds-checkbox_faux"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slds-form-element_horizontal eltStyle -->
+    <div if:true={isInputTypeNumber} class="slds-form__row">
+      <div class="slds-form__item" role="listitem">
+          <div class="slds-form-element slds-form-element_horizontal eltStyle">
+              <label class="slds-form-element__label label">{config.libelle}</label>
+              <div class="slds-form-element__control">
+                  <input type="number" class="slds-input" value={config.value} onchange={onChange}/>
+              </div>
+          </div>
+        </div>
+      </div>
+    <div if:true={isDate} class="slds-form__row">
+      <div class="slds-form__item" role="listitem">
+          <div class="slds-form-element slds-form-element_horizontal eltStyle">
+              <label class="slds-form-element__label label">{config.libelle}</label>
+              <div class="slds-form-element__control">
+                  <input type="date" class="slds-input" value={config.value} onchange={onChange}/>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div if:true={isSeparator}>
+        <hr/>
+    </div>
+    <div if:true={isTaux} class="slds-form__row">
+      <div class="slds-form__item" role="listitem">
+          <div class="slds-form-element slds-form-element_horizontal eltStyle">
+              <label class="slds-form-element__label label">{config.libelle}</label>
+              <div class="slds-form-element__control">
+                  <input type="number" class="slds-input" value={config.value} onchange={onChange}/>
+              </div>
+          </div>
+      </div>
+    </div>
+</template>

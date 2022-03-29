@@ -5,18 +5,20 @@
 <!-- Lwc Noeud Parent -->
 <template>
     <div aria-level={level}>
-        <div class="item"><button onclick={toggleExpand} class={expandedClass}>&#x25B6;</button><span class="mainTitle">{value.libelle}</span>
+        <div class="item"><button onclick={toggleExpand} class={expandedClass}>&#x25B6;</button>
+            <span class="mainTitle">{value.libelle}</span>
         </div>
         <div if:true={expanded} class="items ">
             <template for:each={entries} for:item="entry">
                      <template if:true={entry.fils.length}>
                         <c-lwc-noeud-parent key={entry.numero} value={entry} entries={entry.fils}
-                                            onselect={itemSelected} selected-key={selectedKey}
+                                            onselect={itemSelected} selected-key={selectedKey} checkeds={checkeds}
                                             level={level2}></c-lwc-noeud-parent>
                     </template>
-                    <template if:false={entry.fils.length}>
-                       <c-lwc-noeud-enfant key={entry.numero} value={entry} level={level2}  onselect={itemSelected} selected-key= {selectedKey} ></c-lwc-noeud-enfant>
-                    </template>
+                <template if:false={entry.fils.length}>
+                    <c-lwc-noeud-enfant key={entry.numero} value={entry} level={level2} checkeds={checkeds}
+                                        onselect={itemSelected} selected-key={selectedKey}></c-lwc-noeud-enfant>
+                </template>
             </template>
         </div>
     </div>

@@ -1,0 +1,36 @@
+<!--
+ - Created by max on 24/03/2022.
+ -->
+
+<!-- LwcTreeForm -->
+<template>
+    <div>
+        <lightning-layout>
+            <lightning-layout-item  size="5" medium-device-size="5" flexibility="auto" padding="around-small">
+                <div class="slds-box slds-box slds-p-around_none">
+                    <c-lwc07cretree onselect={onTreeItemSelected}></c-lwc07cretree>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item  size="7" medium-device-size="7" flexibility="auto" padding="around-small">
+                <template if:true={formConfig}>
+                    <div class="slds-box slds-box slds-p-around_none">
+                        <lightning-card>
+                            <h3 slot="title">
+                                Detail {libelle}
+                            </h3>
+                            
+                            <form onsubmit={formChange} class="slds-scrollable_y slds-var-p-around_medium slds-form" style="height:30rem">
+                                <fieldset class="slds-form-element slds-form-element_compound" disabled={formIsDisabled}>
+                                    <div>
+                                        <span class="form_legend">Conditions</span>
+                                    </div>
+                                    <c-lwc-form-builder onvaluechanged={onValueChanged} form-config={formConfig} ></c-lwc-form-builder>
+                                </fieldset>
+                            </form>
+                        </lightning-card>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
