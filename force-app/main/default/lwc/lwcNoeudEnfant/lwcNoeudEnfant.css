@@ -1,45 +1,15 @@
-/* a {
-    text-decoration: none;
-    width: 100%;
-    cursor: pointer;
-    background-color: transparent;
-    transition: ease-in-out 0.2s;
-}
-
-a:hover {
-    background-color: #6bafe8;
-}
-
-a:active {
-    background-color: #6bafe8;
-}
-
-a .checkboxStyle {
-    margin-right: 8px;
-    margin-left: 8px;
-}
-
-a .checkboxLabel {
-    font-size: medium;
-    color: #18212e;
-} */
-
-.mainDiv {
-    width: 100%;
-}
-
 .selected {
     cursor: pointer;
-    background-color: #7dab65;
+    background-color: none;
     transition: ease-in-out 0.2s;
-}
-/* #6bafe8; */
-.selected:hover {
-    background-color: #7dab65;
 }
 
 .selected:active {
-    background-color: #7dab65;
+    background-color: #6bafe8;
+}
+
+.selected:hover {
+    background-color: #6bafe8;
 }
 
 .selected .checkboxStyle {
@@ -50,25 +20,4 @@ a .checkboxLabel {
 .selected .checkboxLabel {
     font-size: medium;
     color: #18212e;
-}
-
-.hovered {
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    transition: ease-in-out 0.2s;
-}
-
-.hovered .checkboxStyle {
-    margin-right: 8px;
-    margin-left: 8px;
-}
-
-.hovered .checkboxLabel {
-    font-size: medium;
-    color: #18212e;
-}
-
-.hovered:hover {
-    background-color: #7dab65;
 }

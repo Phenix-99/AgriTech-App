@@ -13,7 +13,7 @@ export default class LwcNoeudEnfant extends LightningElement {
     checked;
 
     connectedCallback() {
-        this.checked=this.checkeds[this.value.numero] 
+        this.checked=this.checkeds[this.value.numero]
     }
 
     get selectedClass(){
