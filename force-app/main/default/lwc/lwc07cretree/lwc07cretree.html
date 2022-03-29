@@ -5,7 +5,10 @@
 <!-- Tree -->
 <template>
     <lightning-card>
-        <div class="mainDiv">
+        <h3 slot="title">
+            SOUSCRIPTIONS
+        </h3>
+        <div class="slds-scrollable_y slds-var-p-around_medium" style="height:30rem">
             <template if:true={apiresult}>
                 <template for:each={apiresult} for:item="entry">
                     <template if:true={entry.fils.length}>

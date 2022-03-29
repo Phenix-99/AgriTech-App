@@ -1,3 +1,11 @@
 .checkboxStyle {
     margin-right: 5px;
 }
+
+.label {
+    font-size: medium;
+}
+
+.eltStyle {
+    margin: 5px;
+}
