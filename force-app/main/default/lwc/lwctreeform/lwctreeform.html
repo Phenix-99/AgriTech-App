@@ -20,13 +20,12 @@
                             </h3>
                             
                             <form onsubmit={formChange} class="slds-scrollable_y slds-var-p-around_medium slds-form" style="height:30rem">
-                                <fieldset class="slds-form-element slds-form-element_compound">
+                                <fieldset class="slds-form-element slds-form-element_compound" disabled={formIsDisabled}>
                                     <div>
                                         <span class="form_legend">Conditions</span>
                                     </div>
-                                    <c-lwc-form-builder form-config={formConfig}></c-lwc-form-builder>
+                                    <c-lwc-form-builder onvaluechanged={onValueChanged} form-config={formConfig} ></c-lwc-form-builder>
                                 </fieldset>
-                                <lightning-button label="Envoyer" variant="brand" type="submit"></lightning-button>
                             </form>
                         </lightning-card>
                     </div>

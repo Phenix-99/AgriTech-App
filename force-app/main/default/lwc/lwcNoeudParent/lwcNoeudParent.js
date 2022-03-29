@@ -10,6 +10,7 @@ export default class LwcNoeudParent extends LightningElement {
     @api level;
     expanded;
     @api selectedKey;
+    @api checkeds={};
 
     get level2() {
         return this.level + 1

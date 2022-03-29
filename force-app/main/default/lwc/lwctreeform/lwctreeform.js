@@ -6,29 +6,39 @@ import {LightningElement} from 'lwc';
 
 export default class LwcTreeForm extends LightningElement {
 
-  formConfig;
-  libelle;
+  data = {}
+  selectedItem
 
-
-  formChange(e) {
-    e.preventDefault();
-    console.clear();
-    console.log(e, "Inside formChange");
-    const formData = new FormData(e.target);
-    
-    console.log('Output of formData : ');
-    console.log(formData);
-
-    console.log('Output of Object.fromEntries(formData) : ');
-    console.log(JSON.stringify(Object.fromEntries(formData)));
-  }
-  
-  onTreeItemSelected(e){
-      this.formConfig = e.detail.item.conditions;
-      this.libelle = e.detail.item.libelle;
-      console.log(JSON.parse(JSON.stringify(this.formConfig)));
+  get formConfig() {
+    return this.data[this.selectedItem?.numero]?.conditions
   }
 
-    
+
+  get libelle() {
+    return this.selectedItem.libelle
+  }
+
+  formIsDisabled;
+
+  onTreeItemSelected(e) {
+    this.selectedItem = e.detail.item
+    this.data = {
+      ...this.data,
+      [this.selectedItem.numero]: {...e.detail.item, ...this.data[this.selectedItem.numero]}
+    }
+    this.formIsDisabled = !e.detail.isChecked
+  }
+
+  onValueChanged(e) {
+    this.data = {
+      ...this.data,
+      [this.selectedItem.numero]: {
+        ...this.data[this.selectedItem.numero],
+        conditions: e.detail.formConfig
+      }
+    }
+    console.log('data',JSON.parse(JSON.stringify(this.data)));
+
+  }
 
 }
