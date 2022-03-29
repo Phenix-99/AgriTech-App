@@ -27,17 +27,7 @@ export default class FormElement extends LightningElement {
         return this.config.codeFormat === 'TX';
     }
     get selectOptions(){
-        let ctx = this;
-        if(this.config.valeursCondition)
-        return this.config.valeursCondition.map(v=>(
-            { 
-                label: v.libelle,
-                value: v.libelle,
-                key: "k-" + v.codeCondition,
-                selected: v.libelle == ctx.config.value ? "selected" : ""
-            }
-        ))
-        else return [];
+        return this.config.valeursCondition.map(v=>({label: v.libelle, value: v.libelle}))
     }
     onChange(e){
         this.dispatchEvent(new CustomEvent('valuechanged',{
