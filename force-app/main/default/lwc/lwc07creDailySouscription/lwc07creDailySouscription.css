@@ -1,0 +1,14 @@
+.list {
+    list-style: none;
+    padding: 10px;
+    height: 15rem;
+}
+
+.slds-float_left span {
+    vertical-align: middle;
+}
+.slds-float_left  {
+    /* border: 1px solid black; */
+    /* align-self: center; */
+    margin-top: 5px;
+}
