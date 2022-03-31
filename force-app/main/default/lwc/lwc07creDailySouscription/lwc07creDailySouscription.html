@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Souscriptions realises"  class="">
+        <ul class="slds-has-dividers_around-space list slds-scrollable_y slds-var-p-around_medium">
+            <template for:each={listelts} for:item="item">
+                <li key={item.key} class="slds-item slds-clearfix">
+                    <div class="slds-float_left">
+                        <span>{item.libelle}</span>
+                    </div>
+                    
+                    <div class="slds-float_right">
+                        <lightning-button label="Supprimer" variant="destructive"></lightning-button>        
+                    </div>
+                </li>
+            </template>
+            <template if:true={listelts.length}>
+                <template for:each={listelts} for:item="item">
+                    <li key={item.numero} class="slds-item slds-clearfix">
+                        <div class="slds-float_left">
+                            <span>{item.libelle}</span>
+                        </div>
+                        <div class="slds-float_right">
+                            <lightning-button label="Supprimer" variant="destructive"></lightning-button>        
+                        </div>
+                    </li>
+                </template>
+            </template>
+            <template if:false={listelts.length}>
+                <lightning-spinner variant="brand"></lightning-spinner>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
