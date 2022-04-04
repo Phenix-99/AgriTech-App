@@ -4,7 +4,7 @@ global class BatchResetProjetStatusForEtapeZero implements Database.Batchable<sO
                 SELECT Id, Name, isUpdate__c, (SELECT Etape__c, Date__c FROM Notes__r WHERE Etape__c = 'Etape 0')
                 FROM Project__c
                 WHERE isUpdate__c = TRUE AND Etape_en_Cours__c = 0
-               //  and id='a057Q000000zg8NQAQ'
+//                and id='a057Q000000zlHdQAI'
         ]);
     }
 
@@ -24,6 +24,10 @@ global class BatchResetProjetStatusForEtapeZero implements Database.Batchable<sO
 
     global static void start(){
         Database.executeBatch(new BatchResetProjetStatusForEtapeZero());
+    }
+
+    global static void startSch(){
+        System.schedule('Reset project status for Etape 0','0 0 22 * * ?', new BatchResetProjetStatusForEtapeZero());
     }
 
     global void execute(SchedulableContext param1) {
