@@ -14,15 +14,9 @@ export default class LwcFormElement extends LightningElement {
             return 'currency';
         } else if (this.jsonElement.codeFormat == 'TX') {
             return 'percent';
-        }  else if (this.jsonElement.codeFormat == 'SP') {
-            return 'hr';
         } else {
             return 'text';
         }
-    }
-
-    get isHr() {
-        return this.elementType == 'hr';
     }
 
     get isCheckbox() {

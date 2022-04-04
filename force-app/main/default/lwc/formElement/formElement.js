@@ -3,6 +3,10 @@ import { api, LightningElement } from 'lwc';
 export default class FormElement extends LightningElement {
     @api config;
 
+    get required() {
+        return this.config.obligatoire;
+    }
+
     get isCheckbox() {
         return this.config.codeFormat === 'CA';
     }

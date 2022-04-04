@@ -10,6 +10,7 @@
                   placeholder="Select ..."
                   options={selectOptions}
                   variant="label-hidden"
+                  required={required}
                   onchange={onChange}></lightning-combobox>
         </div>
       </div>
@@ -21,7 +22,7 @@
           <label class="slds-form-element__label label">{config.libelle}</label>
           <div class="slds-form-element__control">
             <div class="slds-checkbox">
-              <input type="checkbox" name="options" id={config.numero} class="checkboxStyle"
+              <input required={required} type="checkbox" name="options" id={config.numero} class="checkboxStyle"
                     checked={config.value} onchange={onChange}>
               <label class="slds-checkbox__label" for={config.numero}>
                   <span class="slds-checkbox_faux"></span>
@@ -38,7 +39,7 @@
           <div class="slds-form-element slds-form-element_horizontal eltStyle">
               <label class="slds-form-element__label label">{config.libelle}</label>
               <div class="slds-form-element__control">
-                  <input type="number" class="slds-input" value={config.value} onchange={onChange}/>
+                  <input required={required} type="number" class="slds-input" value={config.value} onchange={onChange}/>
               </div>
           </div>
         </div>
@@ -48,7 +49,7 @@
           <div class="slds-form-element slds-form-element_horizontal eltStyle">
               <label class="slds-form-element__label label">{config.libelle}</label>
               <div class="slds-form-element__control">
-                  <input type="date" class="slds-input" value={config.value} onchange={onChange}/>
+                  <input required={required} type="date" class="slds-input" value={config.value} onchange={onChange}/>
               </div>
           </div>
       </div>
@@ -61,7 +62,7 @@
           <div class="slds-form-element slds-form-element_horizontal eltStyle">
               <label class="slds-form-element__label label">{config.libelle}</label>
               <div class="slds-form-element__control">
-                  <input type="number" class="slds-input" value={config.value} onchange={onChange}/>
+                  <input required={required} type="number" class="slds-input" value={config.value} onchange={onChange}/>
               </div>
           </div>
       </div>
