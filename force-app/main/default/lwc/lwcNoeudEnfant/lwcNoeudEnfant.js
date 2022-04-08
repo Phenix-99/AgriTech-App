@@ -30,7 +30,7 @@ export default class LwcNoeudEnfant extends LightningElement {
         }));
     }
     onChecked(e){
-      this.checked=e.target.checked;
-      this.select()
+        this.checked=e.target.checked;
+        this.select();
     }
 }

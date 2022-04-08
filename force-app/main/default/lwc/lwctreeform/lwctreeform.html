@@ -24,7 +24,7 @@
                                     <div>
                                         <span class="form_legend">Conditions</span>
                                     </div>
-                                    <c-lwc-form-builder onvaluechanged={onValueChanged} form-config={formConfig} ></c-lwc-form-builder>
+                                    <c-lwc-form-builder oncodesuitechanged ={onCodeSuiteChanged} onvaluechanged={onValueChanged} form-config={formConfig} code-suite={codeSuite} libelle={libelle}></c-lwc-form-builder>
                                 </fieldset>
                             </form>
                         </lightning-card>

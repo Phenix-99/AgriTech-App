@@ -2,9 +2,25 @@
     <lightning-card>
         <div class="mainDiv">
             <template for:each={formConfig} for:item="config">
-                <c-form-element onvaluechanged={onValueChanged} config={config}
-                                key={config.numero}></c-form-element>
+                <c-form-element onvaluechanged={onValueChanged} config={config} key={config.numero}></c-form-element>
             </template>
+            <div class="separator">
+                <div>
+                    <span class="form_legend">Réponse Client</span>
+                </div>
+                <div class="slds-form__item mt" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal eltStyle mt">
+                  <label class="slds-form-element__label label">Suite donnée: </label>
+                  <lightning-combobox
+                          name={uniqueId}
+                          value={codeSuite}
+                          placeholder="Select ..."
+                          options={selectOptions}
+                          variant="label-hidden"
+                          onchange={onChange}></lightning-combobox>
+                  </div>
+                </div>
+              </div>
         </div>
     </lightning-card>
 </template>

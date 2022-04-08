@@ -21,6 +21,10 @@ export default class LwcTreeForm extends LightningElement {
     return this.data[this.selectedItem?.numero]?.conditions
   }
 
+  get codeSuite() {
+    return this.data[this.selectedItem?.numero]?.codeSuiteDonneeOrigine
+  }
+
 
   get libelle() {
     return this.selectedItem.libelle
@@ -30,6 +34,7 @@ export default class LwcTreeForm extends LightningElement {
 
   onTreeItemSelected(e) {
     this.selectedItem = e.detail.item
+    console.log('selectedItem', this.selectedItem);
     this.data = {
       ...this.data,
       [this.selectedItem.numero]: {
@@ -41,12 +46,25 @@ export default class LwcTreeForm extends LightningElement {
     this.formIsDisabled = !e.detail.isChecked
   }
 
-  onValueChanged(e) {
+ 
+
+onValueChanged(e) {
     this.data = {
       ...this.data,
       [this.selectedItem.numero]: {
         ...this.data[this.selectedItem.numero],
-        conditions: e.detail.formConfig
+        conditions: e.detail.formConfig ? e.detail.formConfig : []
+      }
+    }
+    console.log('data', JSON.parse(JSON.stringify(this.data)));
+    this.setResult()
+  }
+onCodeSuiteChanged(e) {
+    this.data = {
+      ...this.data,
+      [this.selectedItem.numero]: {
+        ...this.data[this.selectedItem.numero],
+        codeSuiteDonneeOrigine: e.detail.codeSuite
       }
     }
     console.log('data', JSON.parse(JSON.stringify(this.data)));
@@ -63,10 +81,10 @@ export default class LwcTreeForm extends LightningElement {
             "codeCategorieResultat": data.codeResultat,// "P",//codeResultat
             "noPersonneConcernee": null,//"12345672", //?
             "indCouple": false,
-            "codeSuiteDonneeOrigine": "DC",
+            "codeSuiteDonneeOrigine": data.codeSuiteDonneeOrigine,
             "dateSuppression": null,
             "noTypeResultat": numero,// 1100000,//numero
-            "conditions": data.conditions.map(cond => {
+            "conditions": data.conditions?.filter(cond=> cond.value).map(cond => {
               return {
                 "numeroTypeCondition": cond.numero,//45,//conditions.numero
                 [codeFormatPropMap[cond.codeFormat]]: cond.value

@@ -1,6 +1,7 @@
-import { api, LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class FormElement extends LightningElement {
+
     @api config;
 
     get required() {
@@ -33,10 +34,11 @@ export default class FormElement extends LightningElement {
     get selectOptions(){
         return this.config.valeursCondition.map(v=>({label: v.libelle, value: v.libelle}))
     }
+
     onChange(e){
-        this.dispatchEvent(new CustomEvent('valuechanged',{
+        this.dispatchEvent(new CustomEvent('valuechanged', {
             detail:{
-                config:{...this.config,value: e.target.value}
+                config:{...this.config, value: e.target.type==='checkbox'? e.target.checked:e.target.value}
             }
         }))
     }

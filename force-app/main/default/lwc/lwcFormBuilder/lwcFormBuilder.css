@@ -2,3 +2,23 @@
 .mainDiv {
     margin: 5px;
 }
+
+.separator {
+    border-top: 1px solid rgb(179, 179, 179);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.form_legend {
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.mt {
+    margin-top: 10px;
+}
+
+.label {
+    font-size: medium;
+}
