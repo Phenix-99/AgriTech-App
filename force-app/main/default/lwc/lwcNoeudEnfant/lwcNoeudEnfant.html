@@ -1,0 +1,13 @@
+<!--
+ - Created by max on 24/03/2022.
+ -->
+
+<!-- Lwc Noeud Enfant -->
+<template>
+    <div aria-level={level} class={selectedClass} style="margin-left: 4px;" role="button">
+        <div class="checkboxLabel">
+            <input type="checkbox" class="checkboxStyle"  onchange={onChecked} checked={checked}/>
+            <span onclick={select}>{value.libelle}</span>
+        </div>
+    </div>
+</template>

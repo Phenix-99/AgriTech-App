@@ -1,0 +1,25 @@
+<template>
+    <lightning-card>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="2">
+                        <div class="slds-m-top_small"></div>
+                        <lightning-card title="Filter">
+                            <!-- ProjectFilter -->
+                            <c-project-filter onfiltered={getFilterValues}></c-project-filter>
+                        </lightning-card>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="8">
+                        <lightning-card title="Project List">
+                            <!-- ProjectSearch -->
+                            <c-search slot="actions" onnamechange={getFarmerName}></c-search>
+                            <!-- ProjectList -->
+                            <c-project-list filter-values={filterValues} farmer={farmerName}></c-project-list>
+                        </lightning-card>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

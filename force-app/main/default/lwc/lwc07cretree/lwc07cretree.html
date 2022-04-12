@@ -1,0 +1,28 @@
+<!--
+ - Created by max on 23/03/2022.
+ -->
+
+<!-- Tree -->
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            SOUSCRIPTIONS
+        </h3>
+        <div class="slds-scrollable_y slds-var-p-around_medium" style="height:30rem">
+            <template if:true={apiresult}>
+                <template for:each={apiresult} for:item="entry">
+                    <template if:true={entry.fils.length}>
+                        <c-lwc-noeud-parent key={entry.numero} value={entry} entries={entry.fils}
+                                            onselect={itemSelected} selected-key={selectedKey} checkeds={checkeds}
+                                            level={level}></c-lwc-noeud-parent>
+                    </template>
+                    <template if:false={entry.fils.length}>
+                        <c-lwc-noeud-enfant key={entry.numero} value={entry} checkeds={checkeds}
+                                            onselect={itemSelected} selected-key={selectedKey}></c-lwc-noeud-enfant>
+                    </template>
+        
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+/**
+ * Created by max on 24/03/2022.
+ */
+
+h3 {
+    background-color: #f4f6f9;
+}
+
+.slds-card__header {
+    background-color: #ccc;
+}
+
+.form_legend {
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.mt {
+    margin-top: 10px;
+}
+
+.label {
+    font-size: medium;
+}

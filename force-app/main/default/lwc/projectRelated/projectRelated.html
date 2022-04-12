@@ -1,0 +1,13 @@
+<template>
+    <template if:true={projList}>
+        <template for:each={projList} for:item="proj">
+            <section key={proj.Id}>
+                <ul>
+                    <li>
+                        <button data-recordid={proj.Id} onclick={sendProjectId} class="slds-button slds-button_base">{proj.Name}</button>
+                    </li>
+                </ul>
+               </section>
+        </template>
+    </template>
+</template>

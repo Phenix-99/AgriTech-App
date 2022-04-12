@@ -1,0 +1,17 @@
+.tab-custom {
+    --sds-c-tabs-scoped-color-text-active: blue  !important;
+    --slds-c-tabs-item-color-border-active: rgb(9, 255, 0)  !important;
+    --slds-c-tabs-item-color-border-hover: blue  !important;
+    /* --slds-c-tabs-item-text-color: blue; */
+    --slds-c-tabs-item-text-color-active: blue  !important;
+    /* --slds-c-tabs-list-color-border: blue; */
+}
+
+:host {
+    /* --sds-c-tabs-scoped-color-text-active: blue; */
+    --slds-c-tabs-item-color-border-active: rgb(9, 255, 0)  !important;
+    --slds-c-tabs-item-color-border-hover: blue  !important;
+    /* --slds-c-tabs-item-text-color: blue; */
+    --slds-c-tabs-item-text-color-active: blue  !important;
+    /* --slds-c-tabs-list-color-border: blue; */
+  }

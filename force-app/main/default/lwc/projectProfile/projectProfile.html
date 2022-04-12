@@ -1,0 +1,29 @@
+<template>
+
+    <template if:true={profil}>
+        <lightning-card key={profil.Id}>
+            <!-- <ul class="slds-list_dotted">
+                <li>Nom du cultivateur: {profil.Farmer__r.Name}</li>
+                <li>Plante: {profil.Plant__r.Name}</li>
+                <li>Séverité: {profil_severité}</li>
+                <li>Superficie du champ: {profil.Superficy__c}</li>
+                <li>Date de prise de contact: {profil.Date_Prise_Contact__c}</li>
+                <li>Date de Semis: {profil.Date_De_Semis__c}</li>
+                <li>Date Prevu de Recolte: {profil.Date_Recolte__c}</li>
+                <li>Pays: {profil.Pays__c}</li>
+                <li>Region: {profil.Region__c}</li>
+                <li>Localisation: {profil.Localisation__c}</li>
+                <li>Biographie: {profil.Farmer__r.Biography__c}</li>
+                <li>Source: {profil.Farmer__r.Source__c}</li>
+                <li>Expérience avec Agrix-Tech: {profil.Farmer__r.Hold_Agrix__c}</li>
+                <li>Email: {profil.Farmer__r.Email__c}</li>
+                <li>Telephone: {profil.Farmer__r.Phone__c}</li>
+                <li>Whatsapp: {profil.Farmer__r.Whatsapp__c}</li>
+                <li>Possède Agrix-Tech: {profil.Farmer__r.Hold_Agrix__c}</li>
+                <li>Autres Projets du meme Agriculteur:</li>
+            </ul> -->
+            <c-project-related farmer-id={profil.Farmer__r.Id} proj-id-exist={profil.Id}></c-project-related>
+        </lightning-card>
+    </template>
+    
+</template>

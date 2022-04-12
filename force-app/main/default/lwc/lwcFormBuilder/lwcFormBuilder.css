@@ -1,0 +1,26 @@
+/** Made by Dark_tracer */
+.mainDiv {
+    margin: 5px;
+}
+
+.separator {
+    border-top: 1px solid rgb(179, 179, 179);
+    margin-top: 19px;
+    width: 95%;
+    margin-left: 8px;
+    padding-top: 0px;
+}
+
+.form_legend {
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.mt {
+    margin-top: 10px;
+}
+
+.label {
+    font-size: medium;
+}

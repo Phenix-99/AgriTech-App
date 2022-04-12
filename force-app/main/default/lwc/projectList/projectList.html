@@ -1,0 +1,70 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered slds-table_striped">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Farmer"></div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Farmer">Nom cultivateur</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="plant">Plante cultivée</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Phone">Whatsapp/Telephone</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Step">Etape</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Severity">Sévérité</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Country">Pays</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Region">Region</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+            </tr>
+        </thead>
+            <tbody>
+                <template if:true={projectList}>
+                    <template for:each={projectList} for:item="project">
+                        <tr class="slds-hint-parent" key={project.Id}>
+                            <td data-label="click">
+                                <button data-record-id={project.Id} onclick={handleRowClick} class="slds-button slds-button_brand">Details</button>
+                            </td>
+                            <td data-label="Account Name">
+                                <div class="slds-truncate" title="farmer">{project.farmer}</div>
+                            </td>
+                            <td data-label="Close Date">
+                                <div class="slds-truncate" title="plant">{project.plant}</div>
+                            </td>
+                            <td data-label="Prospecting">
+                                <div class="slds-truncate" title="tel">{project.tel}</div>
+                            </td>
+                            <td data-label="Confidence">
+                                <div class="slds-truncate" title="step">{project.step}</div>
+                            </td>
+                            <td data-label="Amount">
+                                <div class="slds-truncate" title="severity">{project.severity}</div>
+                            </td>
+                            <td data-label="Amount">
+                                <div class="slds-truncate" title="country">{project.country}</div>
+                            </td>
+                            <td data-label="Amount">
+                                <div class="slds-truncate" title="region">{project.region}</div>
+                            </td>
+                            <td data-label="Amount">
+                                <div class="slds-truncate" title="severity">{project.status}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+            </tbody>
+    </table>
+</template>

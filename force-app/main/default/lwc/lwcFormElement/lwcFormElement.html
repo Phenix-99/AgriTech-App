@@ -1,0 +1,29 @@
+<template>
+    <template if:true={isPercent}>
+        <lightning-input type="number" value="75" name={jsonElement.numero} label={jsonElement.libelle} formatter="percent" ></lightning-input>
+    </template>
+    <template if:true={isCurrency}>
+        <lightning-input type="number" value="145.33" name={jsonElement.numero} label={jsonElement.libelle} formatter="currency" ></lightning-input>
+    </template>
+    <template if:true={isDate}>
+        <lightning-input type="date" value="01/01/2022" name={jsonElement.numero} date-style="short" label={jsonElement.libelle} ></lightning-input>
+    </template>
+    <template if:true={isCheckbox}>
+        <lightning-input type="checkbox" label={jsonElement.libelle} name={jsonElement.numero}></lightning-input>
+    </template>
+    <template if:true={isSelect}>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="select-01">{jsonElement.libelle}</label>
+            <div class="slds-form-element__control">
+              <div class="slds-select_container">
+                <select class="slds-select" name={jsonElement.numero}>
+                  <!-- <option value="">Select…</option> -->
+                  <template for:each={jsonElement.valeursCondition} for:item="option">
+                    <option key={option.codeCondition}>{option.libelle}</option>
+                  </template>
+                </select>
+              </div>
+            </div>
+          </div>
+    </template>
+</template>

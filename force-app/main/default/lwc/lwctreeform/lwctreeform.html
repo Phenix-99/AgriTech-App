@@ -1,0 +1,53 @@
+<!--
+ - Created by max on 24/03/2022.
+ -->
+
+<!-- LwcTreeForm -->
+<template>
+    <div>
+        <lightning-layout>
+            <lightning-layout-item  size="5" medium-device-size="5" flexibility="auto" padding="around-small">
+                <div class="slds-box slds-box slds-p-around_none">
+                    <c-lwc07cretree onselect={onTreeItemSelected}></c-lwc07cretree>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item  size="7" medium-device-size="7" flexibility="auto" padding="around-small">
+                <template if:true={selectedItem}>
+                    <div class="slds-box slds-box slds-p-around_none">
+                        <lightning-card>
+                            <h3 slot="title">
+                                Detail {libelle}
+                            </h3>
+                            
+                            <form onsubmit={formChange} class="slds-scrollable_y slds-var-p-around_medium slds-form" style="height:30rem">
+                                <fieldset class="slds-form-element slds-form-element_compound" disabled={formIsDisabled}>
+                                    <div if:true={formConfig}>
+                                        <span class="form_legend">Conditions</span>
+                                    </div>
+                                    <c-lwc-form-builder oncodesuitechanged={onCodeSuiteChanged} onvaluechanged={onValueChanged} form-config={formConfig} code-suite={codeSuite} libelle={libelle}></c-lwc-form-builder>
+                                    <div class="slds-p-around_none" if:false={formConfig}>
+                                        <div>
+                                            <span class="form_legend">Réponse Client</span>
+                                        </div>
+                                        <div class="slds-form__item mt" role="listitem">
+                                            <div class="slds-form-element slds-form-element_horizontal eltStyle">
+                                                <label class="slds-form-element__label label">Suite donnée: </label>
+                                                <lightning-combobox
+                                                        name={label}
+                                                        value={value}
+                                                        placeholder="Select ..."
+                                                        options={selectOptions}
+                                                        variant="label-hidden"
+                                                        onchange={onChange}></lightning-combobox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </lightning-card>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

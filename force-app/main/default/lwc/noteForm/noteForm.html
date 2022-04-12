@@ -1,0 +1,49 @@
+<template>
+    
+    <lightning-card>
+        <template if:true={recommandation}>
+            <lightning-card title="Recommandations : ">
+                <p class="slds-m-around_medium"><lightning-formatted-text value={recommandation.Text__c} linkify></lightning-formatted-text></p>
+            </lightning-card>
+        </template>
+
+        <lightning-card title={cardTitle}>
+
+            <div class="slds-m-around_medium">
+
+                
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    fields={fields}
+                    record-id={noteId}
+                    onsubmit={handleSubmit}
+                    onsuccess={handleSuccess}
+                    >
+                </lightning-record-form>
+
+                <div class="slds-align_absolute-center">
+                    
+                    <template if:true={noteId}>
+                        <lightning-file-upload
+                            label="Add Attachments"
+                            name="fileUploader"
+                            record-id={noteId}
+                            onuploadfinished={handleUploadFinished}
+                            multiple
+                        >
+                        </lightning-file-upload>
+                        <div>A File has been attached.</div>
+                    </template>
+                
+                    
+                    <template if:false={noteId}>
+                        No Attachments can be added. <br />
+                        Please save a note before.
+                    </template>
+                </div>
+
+            </div>
+
+        </lightning-card>
+    </lightning-card>
+</template>
