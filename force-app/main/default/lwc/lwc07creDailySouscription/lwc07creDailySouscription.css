@@ -12,3 +12,8 @@
     /* align-self: center; */
     margin-top: 5px;
 }
+.brand-btn {
+    --sds-c-button-brand-color-background: #65ceff;
+    --slds-c-button-brand-color-background-hover: #65ceff;
+    --slds-c-button-brand-color-border-hover:  black;
+}
